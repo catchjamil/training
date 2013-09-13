@@ -1,16 +1,19 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <body>
 
-<s:form action="verify">
+	<s:form action="verify">
 
-	<s:textfield name="uname" label="Enter Username" /><br>
-	<s:password name="password" label="Enter Password" /><br>
-     
-    <s:submit value="Click" align="center" /> 
+		<s:textfield name="uname" label="Enter Username" />
+		<br>
+		<s:password name="password" label="Enter Password" />
+		<br>
+
+		<s:submit value="Login" align="center" />
 
 
 
-</s:form>
+	</s:form>
+	`
 </body>
 </html>
