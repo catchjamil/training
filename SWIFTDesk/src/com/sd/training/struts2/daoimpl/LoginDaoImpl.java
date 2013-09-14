@@ -16,31 +16,31 @@ public class LoginDaoImpl implements LoginDao {
 	@Override
 	public User getUserByName(String uname) {
 
-	//	Connection dbConnection = DatabaseUtil.getDBConnection();
 		User user = new User();
-		/*
-		 * try { Statement createStatement = dbConnection.createStatement();
-		 * ResultSet executeQuery = createStatement.executeQuery(
-		 * "SELECT user_id, name, email, password FROM user_info where name="
-		 * +uname); while(executeQuery.first()){ user = new User();
-		 * user.setUname(executeQuery.getString(1));
-		 * user.setPassword(executeQuery.getString(2));
-		 * 
-		 * } } catch (SQLException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }
-		 */
-		user.setUname(uname);
-		user.setPassword(getUserInfo().get(uname));
+	/*	Connection dbConnection = DatabaseUtil.getDBConnection();
+		
+		  try { Statement createStatement = dbConnection.createStatement();
+		  ResultSet executeQuery = createStatement.executeQuery(
+		  "SELECT user_id, name, email, password FROM user_info where name="
+		  +uname); while(executeQuery.first()){ user = new User();
+		  user.setUname(executeQuery.getString(1));
+		  user.setPassword(executeQuery.getString(2));
+		  } } catch (SQLException e) { // TODO Auto-generated catch block
+		  e.printStackTrace(); }
+		 
+	*/	user.setUname(uname);
+	Map<String, String> userInfo = getUserInfo();
+		user.setPassword(userInfo.get(uname));
 		return user;
 	}
 
 	private Map<String, String> getUserInfo() {
 		Map<String, String> userInfo = new HashMap<String, String>();
-		userInfo.put("admin", "admin");
-		userInfo.put("user1", "admin");
-		userInfo.put("user2", "admin");
-		userInfo.put("user3", "admin");
-		userInfo.put("user4", "admin");
+		userInfo.put("user0", "password0");
+		userInfo.put("user1", "password1");
+		userInfo.put("user2", "password2");
+		userInfo.put("user3", "password3");
+		userInfo.put("user4", "password4");
 		return userInfo;
 	}
 }
