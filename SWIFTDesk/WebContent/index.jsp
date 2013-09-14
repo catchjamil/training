@@ -3,16 +3,11 @@
 <body>
 
 	<s:form action="verify">
-
-		<s:textfield name="uname" label="Enter Username" />
+		<s:textfield name="user.uname" label="Enter Username" />
 		<br>
-		<s:password name="password" label="Enter Password" />
+		<s:password name="user.password" label="Enter Password" />
 		<br>
-
 		<s:submit value="Login" align="center" />
-
-
-
 	</s:form>
 	`
 </body>
