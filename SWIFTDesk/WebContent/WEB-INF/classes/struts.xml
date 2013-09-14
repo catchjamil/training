@@ -7,7 +7,7 @@
 <struts>
     <include file="struts-default.xml"/>
     <package name="a" extends="struts-default">
-        <action name="verify" class="com.sd.training.struts2.actions.LoginAction">
+        <action name="verify" class="com.sd.training.struts2.action.LoginAction">
             <result name="success">/success.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
