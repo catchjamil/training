@@ -11,7 +11,7 @@ class Chair{
 		
 	}
 	 Chair(){
-		 //this.Chair("Sahi Chair");
+		this("Sahi Chair");
 		 System.out.println("Non-Parametrized construtor of"+"Chair class"); 
 		
 		
@@ -28,7 +28,7 @@ class UseTestDemo extends TestDemo{
 		
 	}
 	UseTestDemo(){
-		//this.UseTestDemo(9);
+		this(9);
 		System.out.println("How can write imidiately System.out.prinln() ");
 	}
 }
