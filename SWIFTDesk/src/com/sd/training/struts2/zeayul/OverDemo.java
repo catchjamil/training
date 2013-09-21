@@ -1,6 +1,6 @@
 package com.sd.training.struts2.zeayul;
 
-class A {
+class X{
 	public void mv(){}
 	 void show(){
 		System.out.println("a ");
@@ -8,13 +8,13 @@ class A {
 	}
 	
 }
-class B extends A{
+class Y extends X {
 	void show(){
 		super.show();
 		System.out.println("b");
 	}
 }
-class C extends B{
+class Z extends X{
 	void show(){
 		super.show();
 		System.out.println("c");
@@ -27,12 +27,12 @@ public class OverDemo {
 	public static void main(String arg[]){
 		//A a = new A();
 		//A b = new B();
-		A c = new C();
+		X c = new Z();
 		
 		
 		//a.show();
 		//b.show();
-		c.show();
+	c.show();
 		
 	}
 
