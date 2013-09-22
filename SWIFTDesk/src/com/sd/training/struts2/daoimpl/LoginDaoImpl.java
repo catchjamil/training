@@ -13,24 +13,35 @@ import com.sd.training.struts2.util.DatabaseUtil;
 
 public class LoginDaoImpl implements LoginDao {
 
+	private static User userByName;
+
 	@Override
 	public User getUserByName(String uname) {
 
 		User user = new User();
-	/*	Connection dbConnection = DatabaseUtil.getDBConnection();
+		Connection dbConnection = DatabaseUtil.getDBConnection();
 		
 		  try { Statement createStatement = dbConnection.createStatement();
 		  ResultSet executeQuery = createStatement.executeQuery(
-		  "SELECT user_id, name, email, password FROM user_info where name="
-		  +uname); while(executeQuery.first()){ user = new User();
+		  "SELECT username, password, first_name FROM user_info where username='"+uname+"'"); 
+		  
+		  if(executeQuery.first()){ 
+		  user = new User();
 		  user.setUname(executeQuery.getString(1));
 		  user.setPassword(executeQuery.getString(2));
-		  } } catch (SQLException e) { // TODO Auto-generated catch block
-		  e.printStackTrace(); }
+		  user.setFirstName(executeQuery.getString(3));
+		  }else{
+			  System.out.println("Invalid User : "+executeQuery);
+		  } 
+		  } catch (SQLException e) { // TODO Auto-generated catch block
+			  e.printStackTrace(); 
+		  }finally{
+			  DatabaseUtil.closeConnection(dbConnection);
+		  }
 		 
-	*/	user.setUname(uname);
+	/*	user.setUname(uname);
 	Map<String, String> userInfo = getUserInfo();
-		user.setPassword(userInfo.get(uname));
+		user.setPassword(userInfo.get(uname));*/
 		return user;
 	}
 
