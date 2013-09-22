@@ -35,6 +35,7 @@ public class abstractDemo {
 		//AbstractDemo f = new AbstractDemo();//
 		AbstractDemo2 obj = new AbstractDemo2(4,5);
 		AbstractDemo3 obj1 = new AbstractDemo3(5,5);
+		obj.area();
 		AbstractDemo1 f;
 		f=obj;
 		System.out.println("Area is" +f.area());
