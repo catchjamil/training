@@ -11,12 +11,17 @@ class InhertFun {
 		System.out.println("After down casting ");
 		A a2=new C();
 		
+	//	C c=new A();
+		
 		((C)a2).Show();
 	
 	}
 }
+
 class A {
 	void display(){
+		
+				//if j==Character.UPPERCASE_LETTER;
 		System.out.println("class A");
 	}
 }
