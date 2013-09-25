@@ -53,9 +53,9 @@ class Exc3{
 class ExceInClass{
 	public static void main(String  args[]){
 	
-		Exc1 eob1=new Exc1();
-		Exc2 eob2=new Exc2();
-		Exc3 eob3=new Exc3(args);
+		new Exc1();
+		new Exc2();
+		new Exc3(args);
 		//System.out.println(args[0]);
 		//eob1.disp();
 		//eob2.show();
