@@ -35,5 +35,7 @@ public class LoginAction extends ActionSupport {
 	public String fwdToUserRegistration() {
 		return FWD_TO_USERREGISTRATION;
 	}
-
+public static void main(String[] args) {
+		new LoginAction().execute();	
+   }
 }

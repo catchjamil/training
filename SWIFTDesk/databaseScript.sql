@@ -1,6 +1,6 @@
 --Added By Jamil on Sept-22,2013-----
 --For login in mysql command prompt as a root user 
-mysql -u root -p
+mysql -u root
 -- creating database name of "swiftdb" 
  create database swiftdb;
 -- mounting "swiftdb" database for creating table under this table 
