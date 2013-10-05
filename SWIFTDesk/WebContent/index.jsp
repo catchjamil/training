@@ -9,6 +9,9 @@
 		<br>
 		<s:submit value="Login" align="center" />
 	</s:form>
-	`
+	
+	<br>
+	<a href="fwdToUserRegistration.action">User Registration</a>
+	
 </body>
 </html>
