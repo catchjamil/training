@@ -10,9 +10,10 @@ public class LoginAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	private static final String SUCCESS = "success";
+	private static final String FWD_TO_USERREGISTRATION = "fwdToUserRegistration";
 	private static final String ERROR = "error";
 	private User user;
-	
+
 	public User getUser() {
 		return user;
 	}
@@ -25,10 +26,14 @@ public class LoginAction extends ActionSupport {
 		LoginService loginServiceImpl = new LoginServiceImpl();
 		if (loginServiceImpl.authenticateUser(this.getUser())) {
 			return SUCCESS;
-		}else{
+		} else {
 			return ERROR;
 		}
-		
+
+	}
+
+	public String fwdToUserRegistration() {
+		return FWD_TO_USERREGISTRATION;
 	}
 
 }
