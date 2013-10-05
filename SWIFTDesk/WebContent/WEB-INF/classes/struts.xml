@@ -11,5 +11,15 @@
             <result name="success">/success.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
+         <action name="fwdToUserRegistration" class="com.sd.training.struts2.action.LoginAction" method="fwdToUserRegistration">
+            <result name="fwdToUserRegistration">/UserForm.jsp</result>
+        </action>
+       
+        
+        <action name="userForm" class="com.sd.training.struts2.action.UserAction" method="save">
+            <result name="userForm">/UserForm.jsp</result>
+            
+        </action>
+        
     </package>
 </struts>
