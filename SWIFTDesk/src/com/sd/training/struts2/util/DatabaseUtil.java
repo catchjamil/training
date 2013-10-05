@@ -5,20 +5,26 @@ import java.sql.DriverManager;
 
 public class DatabaseUtil {
 
-	public static Connection getDBConnection(){
+	public static Connection getDBConnection()
+	{
 	Connection conn = null;
 	  String url = "jdbc:mysql://localhost:3306/";
 	  String dbName = "swiftdb";
 	  String driver = "com.mysql.jdbc.Driver";
 	  String userName = "root"; 
 	  String password = "root";
-	  try {
+	  
+	 
+	  
+	  try{
 	  Class.forName(driver).newInstance();
 	  conn = DriverManager.getConnection(url+dbName,userName,password);
 	  System.out.println("Connected to the database");
-	  } catch (Exception e) {
-	  e.printStackTrace();
-	  }
+	  }catch(ArithmeticException e){
+		  
+	  }catch(Exception e){
+		  
+	  } 
 	  return conn;
 	}
 	public static void closeConnection(Connection conn){
