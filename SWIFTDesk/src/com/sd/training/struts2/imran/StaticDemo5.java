@@ -1,8 +1,8 @@
 package com.sd.training.struts2.imran;
 class StaticDemo5{
 	static int a=5;
-	static int b;
-	static void method(int x){
+	static int b,x;
+	static void method(){
 		System.out.println("x= " +x);
 		System.out.println("a= " +a);
 		System.out.println("b= " +b);
@@ -12,7 +12,7 @@ class StaticDemo5{
 	}
 
 	public static void main(String[] args){
-		method(50);
+		method();
 	}
 }	
 

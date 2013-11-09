@@ -2,7 +2,7 @@ package com.sd.training.struts2.imran;
 abstract class M{
 	abstract void method();
 	void method1(){
-		System.out.println("Ruscle");
+		System.out.println("Room");
 	}
 }
 class N extends M{
