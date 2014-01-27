@@ -1,5 +1,5 @@
 package com.sd.training.struts2.raza;
 
-public class MThread {
+public class MyThread {
 
 }
