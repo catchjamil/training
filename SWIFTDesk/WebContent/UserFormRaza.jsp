@@ -1,5 +1,5 @@
 
-    <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,8 +9,8 @@
 <script type="text/javascript">
 function validateForm()
 {
-///var x=document.forms["myForm"]["user.uname"].value;
-var x=document.field.uname.value;
+var x=document.forms["myForm"]["user.uname"].value;
+///var x=document.field.uname.value;
 if (x==null || x=="")
   {
   alert("First name must be filled out");
@@ -24,11 +24,12 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x1.length)
   alert("Not a valid e-mail address");
   return false;
   }
+ return true; 
 }
 </script>
 <body>
 <center><b><s:property value="message" /></b></center>
-	<s:form action="userForm" name = "myFrom" onsubmit="return(validateForm())">
+	<s:form action="userForm" name = "myFrom" onsubmit="javascript:return validateForm()">
 		<s:textfield name="user.uname" label="Enter Username" />
 		<br>
 		<s:password name="user.password" label="Enter Password" />
