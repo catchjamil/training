@@ -9,38 +9,76 @@
 <script type="text/javascript">
 function validateForm()
 {
-var x=document.forms["myForm"]["user.uname"].value;
-///var x=document.field.uname.value;
-if (x==null || x=="")
+var uname=document.forms["userForm"]["user.uname"].value;
+//var x =document.getElementById("user.uname");
+var email =document.forms["userForm"]["user.email"].value;
+var pass =document.forms["userForm"]["user.password"].value;
+var passc =document.forms["userForm"]["user.passwordc"].value;
+var fname=document.forms["userForm"]["user.firstName"].value;
+var lname=document.forms["userForm"]["user.lastName"].value;
+
+if (uname==null || uname=="")
   {
-  alert("First name must be filled out");
-  return false;
+	  	alert("Username must be filled out");
+	  	return false;
   }
-var x1=document.forms["myForm"]["email"].value;
-var atpos=x1.indexOf("@");
-var dotpos=x1.lastIndexOf(".");
-if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x1.length)
+  else if (pass==null||pass=="")
   {
-  alert("Not a valid e-mail address");
-  return false;
+	  	alert("Enter the password ");
+	  	return false;
   }
- return true; 
+  else if (passc==null||passc=="")
+  {
+	  	alert("Enter the confirm password ");
+	  	return false;
+  }
+  else if (pass!=pass)
+  {
+	  	alert("password are not matched ");
+	  	return false;
+  }
+  else if (fname==null||fname=="")
+  {
+	  	alert("First Name is required ");
+	  	return false;
+  }
+  else if (lname==null||lname=="")
+  {
+	  	alert("Last Name is required ");
+	  	return false;
+  }
+  else{  
+		var atpos=email.indexOf("@");
+		var dotpos=email.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x1.length)
+  		{
+  			alert("Not a valid e-mail address");
+  			return false;
+  		}
+  }  
+return true; 
 }
 </script>
 <body>
+<center><b>User Registration Form</b></center><hr><hr><br>
 <center><b><s:property value="message" /></b></center>
-	<s:form action="userForm" name = "myFrom" onsubmit="javascript:return validateForm()">
+	<s:form action="userForm" onsubmit="return validateForm()">
 		<s:textfield name="user.uname" label="Enter Username" />
-		<br>
+		
 		<s:password name="user.password" label="Enter Password" />
-		<br>
-		<s:password name="user.password" label="Confirm Password" />
-		<br>
+		
+		<s:password name="user.passwordc" label="Confirm Password" />
+
 		<s:textfield name="user.firstName" label="First Name" />
-		<br>
+		
+		<s:textfield name="user.lastName" label="Last Name" />
+		
 		<s:textfield name="user.email" label="E-mail" />
-		<br>
-		<s:submit value="Submit" align="center" />
+		
+		<s:submit value="Submit" />
+
+		<s:reset value="Reset "  />
+		
 	</s:form>
 
 </body>

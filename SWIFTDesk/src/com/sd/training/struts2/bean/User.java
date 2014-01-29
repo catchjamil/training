@@ -56,13 +56,24 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	// -----edited  by Raza---------
 	private String email;
 	@Column(name="email")
 	public String getEmail() {
-		return "email@email.com";
+		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	//-----------added  by Raza--------
+	private String lastName;
+	@Column(name="last_Name")
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 }

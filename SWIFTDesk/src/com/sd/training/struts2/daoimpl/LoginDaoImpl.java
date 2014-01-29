@@ -20,11 +20,13 @@ public class LoginDaoImpl implements LoginDao {
 
 		User user = new User();
 		Connection dbConnection = DatabaseUtil.getDBConnection();
-		
+		 System.out.println("test-----------1  ");
+		 System.out.println("test-----------11  ");
 		  try { Statement createStatement = dbConnection.createStatement();
+		  System.out.println("test-----------2  ");
 		  ResultSet executeQuery = createStatement.executeQuery(
 		  "SELECT username, password, first_name FROM user_info where username='"+uname+"'"); 
-		  
+		  System.out.println("test-----------3  ");
 		  if(executeQuery.first()){ 
 		  user = new User();
 		  user.setUname(executeQuery.getString(1));
@@ -32,6 +34,7 @@ public class LoginDaoImpl implements LoginDao {
 		  user.setFirstName(executeQuery.getString(3));
 		  }else{
 			  System.out.println("Invalid User : "+executeQuery);
+			  System.out.println("test-----------33  ");
 		  } 
 		  } catch (SQLException e) { // TODO Auto-generated catch block
 			  e.printStackTrace(); 
