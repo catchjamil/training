@@ -1,6 +1,7 @@
 package com.sd.training.struts2.daoimpl;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,26 +21,28 @@ public class LoginDaoImpl implements LoginDao {
 
 		User user = new User();
 		Connection dbConnection = DatabaseUtil.getDBConnection();
-		 System.out.println("test-----------1  ");
-		 System.out.println("test-----------11  ");
-		  try { Statement createStatement = dbConnection.createStatement();
-		  System.out.println("test-----------2  ");
-		  ResultSet executeQuery = createStatement.executeQuery(
-		  "SELECT username, password, first_name FROM user_info where username='"+uname+"'"); 
-		  System.out.println("test-----------3  ");
-		  if(executeQuery.first()){ 
-		  user = new User();
-		  user.setUname(executeQuery.getString(1));
-		  user.setPassword(executeQuery.getString(2));
-		  user.setFirstName(executeQuery.getString(3));
-		  }else{
+		
+	    try { 
+			  
+			 Statement createStatement = dbConnection.createStatement();
+			 ResultSet executeQuery = createStatement.executeQuery(
+			 "SELECT username, password, first_name FROM user_info where username='"+uname+"'"); 
+			if(executeQuery.first()){ 
+				user = new User();
+				user.setUname(executeQuery.getString(1));
+				user.setPassword(executeQuery.getString(2));
+				user.setFirstName(executeQuery.getString(3));
+			}else{
 			  System.out.println("Invalid User : "+executeQuery);
-			  System.out.println("test-----------33  ");
-		  } 
+			
+			} 
 		  } catch (SQLException e) { // TODO Auto-generated catch block
+			  
 			  e.printStackTrace(); 
+			
 		  }finally{
 			  DatabaseUtil.closeConnection(dbConnection);
+			 
 		  }
 		 
 	/*	user.setUname(uname);
