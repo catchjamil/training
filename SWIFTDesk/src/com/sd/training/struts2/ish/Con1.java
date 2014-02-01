@@ -19,6 +19,7 @@ public class Con1 {
 	public static void main(String args[]){
 		Demo1 ob1=new Demo1();
 		Demo2 ob2=new Demo2();
+		
 		//ob1.team(7,8);
 		//ob1.Demo1();
 	}
