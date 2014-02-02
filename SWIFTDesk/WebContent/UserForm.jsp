@@ -60,9 +60,13 @@ return true;
 }
 </script>
 <body>
-<center><b>User Registration Form</b></center><hr><hr><br>
+<table>
+<center><b>User Registration Form</b></center><hr><hr><br></center>
+ <center><b><s:property value="message" /></b></center>
+	<s:form action="userForm">
 <center><b><s:property value="message" /></b></center>
 	<s:form action="userForm" onsubmit="return validateForm()">
+
 		<s:textfield name="user.uname" label="Enter Username" />
 		
 		<s:password name="user.password" label="Enter Password" />
@@ -78,8 +82,13 @@ return true;
 		<s:submit value="Submit" />
 
 		<s:reset value="Reset "  />
-		
-	</s:form>
 
+	</s:form>
+<<<<<<< .mine
+	</table>
+
+=======
+
+>>>>>>> .r105
 </body>
 </html>
