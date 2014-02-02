@@ -1,4 +1,4 @@
-
+ 
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -17,7 +17,7 @@ var pass =document.forms["userForm"]["user.password"].value;
 var passc =document.forms["userForm"]["user.passwordc"].value;
 var fname=document.forms["userForm"]["user.firstName"].value;
 var lname=document.forms["userForm"]["user.lastName"].value;
-
+//function validun(){
 if (uname==null || uname=="")
   {
 	document.getElementById("un").innerHTML="enter user name";  	
@@ -84,34 +84,34 @@ return flag;
 }
 </script>
 <body>
-<table  width=75% border=1 cellpadding=10 cellspacing=5>
+<table >
 <tr>
-<td><center><h2>User Registration Form</h2></center>
- <b><s:property value="message" /></b>
+<td><center><h2>User Registration Form</h2></center></td></tr>
+<tr><td> <b><s:property value="message" /></b></td></tr>
 <s:form action="userForm" onsubmit="return validateForm()">
 <tr>
-<td><s:textfield name="user.uname" label="Enter Username" ></s:textfield>
+<td><s:textfield name="user.uname" label="Enter Username"  onblur="validun()"/></td>
 <td><p id=un style="color: red;"></p>
 </tr>	
 <tr>
-<td><s:password name="user.password" label="Enter Password" />
+<td><s:password name="user.password" label="Enter Password" /></td>
 <td><p id=pa style="color: red;"></p>
 </tr>
 <tr>
-<td><s:password name="user.passwordc" label="Confirm Password" />
+<td><s:password name="user.passwordc" label="Confirm Password" /></td>
 <td><p id=pac style="color: red;"></p>
 </tr>
 <tr>
-<td><s:textfield name="user.firstName" label="First Name" />	
-<td><p id=fn style="color: red;"></p>
+<td><s:textfield name="user.firstName" label="First Name" /></td>	
+<td><p id=fn style="color: red;"></p></td>
 </tr>
 <tr>
-<td><s:textfield name="user.lastName" label="Last Name" />
-<td><p id=ln style="color: red;"></p>
+<td><s:textfield name="user.lastName" label="Last Name" /></td>
+<td><p id=ln style="color: red;"></p></td>
 </tr>
 <tr>
-<td><s:textfield name="user.email" label="E-mail" />	
-<td><p id=em style="color: red;"></p>
+<td><s:textfield name="user.email" label="E-mail" /></td>	
+<td><p id=em style="color: red;"></p></td>
 </tr>
 <tr>
 <td ><s:submit value="Submit" /></td>
