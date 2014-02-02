@@ -64,7 +64,7 @@ return true;
 <center><b>User Registration Form</b></center><hr><hr><br></center>
  <center><b><s:property value="message" /></b></center>
 	<s:form action="userForm">
-<center><b><s:property value="message" /></b></center>
+    <center><b><s:property value="message" /></b></center>
 	<s:form action="userForm" onsubmit="return validateForm()">
 
 		<s:textfield name="user.uname" label="Enter Username" />
@@ -84,11 +84,6 @@ return true;
 		<s:reset value="Reset "  />
 
 	</s:form>
-<<<<<<< .mine
-	</table>
-
-=======
-
->>>>>>> .r105
+</table>
 </body>
 </html>
