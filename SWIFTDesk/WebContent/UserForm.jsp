@@ -9,6 +9,7 @@
 <script type="text/javascript">
 function validateForm()
 {
+var flag=true;
 var uname=document.forms["userForm"]["user.uname"].value;
 //var x =document.getElementById("user.uname");
 var email =document.forms["userForm"]["user.email"].value;
@@ -19,71 +20,103 @@ var lname=document.forms["userForm"]["user.lastName"].value;
 
 if (uname==null || uname=="")
   {
-	  	alert("Username must be filled out");
-	  	return false;
+	document.getElementById("un").innerHTML="enter user name";  	
+	//alert("Username must be filled out");
+	  	flag= false;
   }
-  else if (pass==null||pass=="")
+else{
+	document.getElementById("un").innerHTML="";
+}
+  if (pass==null||pass=="")
   {
-	  	alert("Enter the password ");
-	  	return false;
+	  document.getElementById("pa").innerHTML="enter password";
+	  	//alert("Enter the password ");
+	  		flag= false;
   }
-  else if (passc==null||passc=="")
+  else{
+		document.getElementById("pa").innerHTML="";
+	}
+  if (passc==null||passc=="")
   {
-	  	alert("Enter the confirm password ");
-	  	return false;
+	  document.getElementById("pac").innerHTML="enter confirm password";
+		flag= false;
   }
-  else if (pass!=passc)
+  else{
+		document.getElementById("pac").innerHTML="";
+	}
+  if (pass!=passc)
   {
-	  	alert("passwords are not matched ");
-	  	return false;
+	  document.getElementById("pac").innerHTML="password not matched";
+		flag= false;
   }
-  else if (fname==null||fname=="")
+  else{
+		document.getElementById("pac").innerHTML="";
+	}
+  if (fname==null||fname=="")
   {
-	  	alert("First Name is required ");
-	  	return false;
+	  document.getElementById("fn").innerHTML="enter first name";
+		flag= false;
   }
-  else if (lname==null||lname=="")
+  else{
+		document.getElementById("fn").innerHTML="";
+	}
+  if (lname==null||lname=="")
   {
-	  	alert("Last Name is required ");
-	  	return false;
+	  document.getElementById("ln").innerHTML="enter last name";
+		flag= false;
   }
-  else{  
+  else{
+		document.getElementById("ln").innerHTML="";
+	}
+    
 		var atpos=email.indexOf("@");
 		var dotpos=email.lastIndexOf(".");
 		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x1.length)
   		{
-  			alert("Not a valid e-mail address");
-  			return false;
+			document.getElementById("em").innerHTML="invalid e-mail ID";
+			flag= false;
   		}
-  }  
-return true; 
+		else{
+			document.getElementById("em").innerHTML="";
+		}
+    
+return flag; 
 }
 </script>
 <body>
-<table>
-<center><b>User Registration Form</b></center><hr><hr><br></center>
- <center><b><s:property value="message" /></b></center>
-	<s:form action="userForm">
-    <center><b><s:property value="message" /></b></center>
-	<s:form action="userForm" onsubmit="return validateForm()">
-
-		<s:textfield name="user.uname" label="Enter Username" />
-		
-		<s:password name="user.password" label="Enter Password" />
-		
-		<s:password name="user.passwordc" label="Confirm Password" />
-
-		<s:textfield name="user.firstName" label="First Name" />
-		
-		<s:textfield name="user.lastName" label="Last Name" />
-		
-		<s:textfield name="user.email" label="E-mail" />
-		
-		<s:submit value="Submit" />
-
-		<s:reset value="Reset "  />
-
-	</s:form>
+<table  width=75% border=1 cellpadding=10 cellspacing=5>
+<tr>
+<td><center><h2>User Registration Form</h2></center>
+ <b><s:property value="message" /></b>
+<s:form action="userForm" onsubmit="return validateForm()">
+<tr>
+<td><s:textfield name="user.uname" label="Enter Username" ></s:textfield>
+<td><p id=un style="color: red;"></p>
+</tr>	
+<tr>
+<td><s:password name="user.password" label="Enter Password" />
+<td><p id=pa style="color: red;"></p>
+</tr>
+<tr>
+<td><s:password name="user.passwordc" label="Confirm Password" />
+<td><p id=pac style="color: red;"></p>
+</tr>
+<tr>
+<td><s:textfield name="user.firstName" label="First Name" />	
+<td><p id=fn style="color: red;"></p>
+</tr>
+<tr>
+<td><s:textfield name="user.lastName" label="Last Name" />
+<td><p id=ln style="color: red;"></p>
+</tr>
+<tr>
+<td><s:textfield name="user.email" label="E-mail" />	
+<td><p id=em style="color: red;"></p>
+</tr>
+<tr>
+<td ><s:submit value="Submit" /></td>
+<td ><s:reset value="Reset " /></td></tr>
+</s:form>
 </table>
 </body>
 </html>
