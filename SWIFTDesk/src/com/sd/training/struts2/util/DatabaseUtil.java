@@ -10,7 +10,7 @@ public class DatabaseUtil {
 	  String dbName = "swiftdb";
 	 // String driver = "com.mysql.jdbc.Driver";
 	  String userName = "root"; 
-	  String password = "";
+	  String password = "root";
 	  
 	 
 	  
