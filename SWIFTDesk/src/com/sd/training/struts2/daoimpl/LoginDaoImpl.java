@@ -29,9 +29,9 @@ public class LoginDaoImpl implements LoginDao {
 			 "SELECT username, password, first_name FROM user_info where username='"+uname+"'"); 
 			if(executeQuery.first()){ 
 				user = new User();
-				user.setUname(executeQuery.getString(1));
-				user.setPassword(executeQuery.getString(2));
-				user.setFirstName(executeQuery.getString(3));
+				user.setUname(executeQuery.getString("username"));
+				user.setPassword(executeQuery.getString("password"));
+				user.setFirstName(executeQuery.getString("first_name"));
 			}else{
 			  System.out.println("Invalid User : "+executeQuery);
 			
