@@ -2,11 +2,8 @@ package com.sd.training.struts2.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.sd.training.struts2.bean.Bic;
-import com.sd.training.struts2.bean.User;
 import com.sd.training.struts2.service.BicService;
-import com.sd.training.struts2.service.UserService;
 import com.sd.training.struts2.serviceImpl.BicServiceImpl;
-import com.sd.training.struts2.serviceImpl.UserServiceImpl;
 
 public class BicAction extends ActionSupport {
 

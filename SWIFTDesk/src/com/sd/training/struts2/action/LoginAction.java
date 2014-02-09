@@ -12,6 +12,8 @@ public class LoginAction extends ActionSupport {
 	private static final String SUCCESS = "success";
 	private static final String FWD_TO_USERREGISTRATION = "fwdToUserRegistration";
 	private static final String ERROR = "error";
+	private static final String FWD_TO_PAYEE = "fwdToAddPayee";
+	private static final String FWD_TO_TRANSFER = "fwdToTransfer";
 	private User user;
 
 	public User getUser() {
@@ -30,6 +32,12 @@ public class LoginAction extends ActionSupport {
 			return ERROR;
 		}
 
+	}
+	public String fwdToAddPayee(){
+		return FWD_TO_PAYEE;
+	}
+	public String fwdToTransfer(){
+		return FWD_TO_TRANSFER;
 	}
 
 	public String fwdToUserRegistration() {
