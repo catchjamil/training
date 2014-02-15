@@ -34,5 +34,10 @@
             <result name="addPayee">/AddPayee.jsp</result>
             
         </action>
+        <action name="hello" class="com.sd.training.struts2.action.HelloAction">
+            <result name="helloForm">/HelloForm.jsp</result>
+        </action>
+        
+        
     </package>
 </struts>
