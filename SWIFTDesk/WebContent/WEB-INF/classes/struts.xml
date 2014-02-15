@@ -11,7 +11,7 @@
             <result name="success">/success.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
-         <action name="fwdToUserRegistration" class="com.sd.training.struts2.action.LoginAction" method="fwdToUserRegistration">
+         <action name="fwdToUserRegistration" class="com.sd.training.struts2.action.UserAction" method="fwdToUserRegistration">
             <result name="fwdToUserRegistration">/UserForm.jsp</result>
         </action>
          <action name="fwdToAddPayee" class="com.sd.training.struts2.action.LoginAction" method="fwdToAddPayee">

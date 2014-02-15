@@ -12,6 +12,7 @@ public class PayeeAction extends ActionSupport {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final String PAYEE_FORM="addPayee";
+	private static final String FWD_TO_PAYEE = "fwdToAddPayee";
 	private Payee payee;
 	private String message;
 	public Payee getPayee() {
@@ -26,7 +27,9 @@ public class PayeeAction extends ActionSupport {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+	public String fwdToAddPayee(){
+		return FWD_TO_PAYEE;
+	}
 	
 	public String save() {
 		PayeeService payeeService=new PayeeServiceImpl();

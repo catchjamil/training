@@ -1,14 +1,20 @@
 package com.sd.training.struts2.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity	
 @Table(name="bic_code")
-public class Bic {
+public class Bic implements Serializable{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String bankcode;
 	private String countrycode;
 	private String locationcode;

@@ -19,14 +19,14 @@ function validateForm() {
 <s:form action="transfer" onsubmit="return validateForm()">
 <table border="1">
 <s:property value="message"/>
-<s:select label="Account" list="ac_list" name="transfer.SourceAcc"/>
+<s:select label="Account" list="aclist" name="transfer.SourceAcc"/>
 <s:textfield  label="Originator of Remitance" name="transfer.Oor"/>
 <tr>
 <td><td><label id=ioor style="color: red">&nbsp;</label>
 <s:textfield  label="Transfer Amount" name="transer.TransferAmount"/>
 <tr>
 <td><td><label id=ita style="color: red">&nbsp;</label>
-<s:select label="Beneficiary" list="payee_list" name="transfer.Beneficiary"/>
+<s:select label="Beneficiary" list="payeelist" name="transfer.Beneficiary"/>
 <s:div id=ac_no name="transfer.DestinationAcc"></s:div>
 <s:textfield label="IFSC" name="transfer.Ifsc"/>
 <s:textfield label="Payment Details" name="transfer.PaymentDeyail"/>

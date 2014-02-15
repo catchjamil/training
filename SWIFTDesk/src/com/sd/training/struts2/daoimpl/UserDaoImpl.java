@@ -13,18 +13,18 @@ public class UserDaoImpl implements UserDao {
 
 
 	@Override
-	public User save(User uname) {
+	public User save(User user) {
 		try{
 		Session session = HibernateUtil.openSession();
 		Transaction transaction = session.beginTransaction();
-		session.save(uname);
+		session.save(user);
 		transaction.commit();
 		session.close();
 		}catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
-		return uname;
+		return user;
 	}
 	
 }

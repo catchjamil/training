@@ -9,7 +9,10 @@ public class UserAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	private static final String USER_FORM = "userForm";
+	private static final String FWD_TO_USERREGISTRATION = "fwdToUserRegistration";
+	
 	private User user;
+	private String message;
 
 	public User getUser() {
 		return user;
@@ -26,8 +29,11 @@ public class UserAction extends ActionSupport {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public String fwdToUserRegistration() {
+		return FWD_TO_USERREGISTRATION;
+	}
 	
-	private String message;
+	
 
 	public String save() {
 		UserService userServiceImpl = new UserServiceImpl();
