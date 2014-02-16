@@ -2,6 +2,7 @@ package com.sd.training.struts2.bean;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,9 +29,28 @@ public class Menu  implements Serializable{
 	}
 
 	private String name;
+	private Long parentId;
+	@Column
+	public String getHref() {
+		return href;
+	}
 
+	public void setHref(String href) {
+		this.href = href;
+	}
 
-	 @Column
+	private String href;
+
+	@Column
+	 public Long getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+	}
+
+	@Column
 	public String getName() {
 		return name;
 	}

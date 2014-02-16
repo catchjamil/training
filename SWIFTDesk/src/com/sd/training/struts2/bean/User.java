@@ -15,6 +15,20 @@ public class User implements Serializable{
 	private static final long serialVersionUID = 2006827975533105606L;
 
 	private int id;
+	private String uname; 
+	private String password;
+	private String firstName;
+	@Column
+	private int roleID;
+
+	public int getRoleID() {
+		return roleID;
+	}
+
+	public void setRoleID(int roleID) {
+		this.roleID = roleID;
+	}
+
 	@Id
 	@GeneratedValue
 	@Column(name="id")
@@ -26,9 +40,7 @@ public class User implements Serializable{
 		this.id = id;
 	}
 
-	private String uname; 
-	private String password;
-	private String firstName;
+	
 	
 	@Column(name="first_name")
 	public String getFirstName() {

@@ -1,7 +1,11 @@
 package com.sd.training.struts2.daoimpl;
 
-import org.hibernate.Transaction;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.sd.training.struts2.bean.Payee;
 import com.sd.training.struts2.dao.PayeeDao;
@@ -27,8 +31,22 @@ public class PayeeDaoImpl implements PayeeDao {
 		return payee;
 	}
 
-	
-	
+
+	public List<Payee> getAccountList() throws RuntimeException {
+		
+		Session session=HibernateUtil.openSession();
+		Query createQuery = session.createQuery("from Payee");
+		ArrayList<Payee> arrayList = new ArrayList<Payee>();
+		List list = createQuery.list();
+		
+		for(Object obj:list){
+			Payee payee = (Payee)obj;
+			arrayList.add(payee);
+		
+	}
+		
+		return arrayList;
+	}
 	
 }
 

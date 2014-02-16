@@ -118,49 +118,52 @@ function validateForm()
 </script>
 </head>
 <body bgcolor="lightblue">
-<h2 align="center" ><u>User Registration Form</u></h2><hr><br>
-<table border=5 align="center" cellpadding="20" bgcolor="lightgrey">
-	
-	<tr>
-    <td> <b><s:property value="message" /></b>
-	<s:form  action="userForm" onsubmit="return validateForm()">
+	<h2 align="center">
+		<u>User Registration Form</u>
+	</h2>
+	<hr>
+	<br>
+	<table border=5 align="center" cellpadding="20" bgcolor="lightgrey">
 
-	<tr>
-  	<td><s:textfield size="30" name="user.uname" label="Enter Username" onblur="validuname()"/>
-  	<td>
-  	<td><label  id="un" style="color: red;"> &nbsp;</label>
+		<tr>
+			<td><b><s:property value="message" /></b> <s:form
+					action="userForm" onsubmit="return validateForm()">
 
-	<tr> 
-    <td><s:password size="30" name="user.password" label="Enter Password" onblur="validpass()"/>
-    <td>
-    <td><label id="pa" style="color: red;">&nbsp;</label>
-		
-	<tr>
-    <td><s:password size="30" name="user.passwordc" label="Confirm Password" onblur="validpassc()"/>
-    <td>
-    <td><label id="pac" style="color: red;">&nbsp;</label>
-
-	<tr>
-    <td><s:textfield size="30"  name="user.firstName" label="First Name"  onblur="validfname()"/>
-    <td>
-    <td><label id="fn" style="color: red;">&nbsp;</label>
-		
-	<tr>
-    <td><s:textfield size="30"  name="user.lastName" label="Last Name" onblur="validlname()"/>
-    <td>
-    <td><label id="ln" style="color: red;">&nbsp;</label>
-		
-	<tr>
-    <td><s:textfield size="30"  name="user.email" label="E-mail" onblur="validemail()"/>
-    <td>
-    <td><label id="em" style="color: red;">&nbsp;</label>
-		
-	<tr>
-	 <td><s:submit  value="Submit" />
-		<s:reset  value="Reset  " />
-   
-    
-	</s:form>
-</table>	
+					<tr>
+						<td><s:textfield size="30" name="user.uname"
+								label="Enter Username" onblur="validuname()" />
+						<td>
+						<td><label id="un" style="color: red;"> &nbsp;</label>
+					<tr>
+						<td><s:password size="30" name="user.password"
+								label="Enter Password" onblur="validpass()" />
+						<td>
+						<td><label id="pa" style="color: red;">&nbsp;</label>
+					<tr>
+						<td><s:password size="30" name="user.passwordc"
+								label="Confirm Password" onblur="validpassc()" />
+						<td>
+						<td><label id="pac" style="color: red;">&nbsp;</label>
+					<tr>
+						<td><s:textfield size="30" name="user.firstName"
+								label="First Name" onblur="validfname()" />
+						<td>
+						<td><label id="fn" style="color: red;">&nbsp;</label>
+					<tr>
+						<td><s:textfield size="30" name="user.lastName"
+								label="Last Name" onblur="validlname()" />
+						<td>
+						<td><label id="ln" style="color: red;">&nbsp;</label>
+					<tr>
+						<td><s:textfield size="30" name="user.email" label="E-mail"
+								onblur="validemail()" />
+						<td>
+						<td><label id="em" style="color: red;">&nbsp;</label>
+					<tr>
+						<td><s:submit value="Submit" /></td>
+						<td><s:reset value="Reset  " /></td>
+					</tr>
+				</s:form>
+	</table>
 </body>
 </html>

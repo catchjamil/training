@@ -19,27 +19,28 @@ public class Role  implements Serializable{
 	@Id 
 	@GeneratedValue
 	private Long Id;
-	private Long menuId;
-	private Long userId;
-
-	 public Long getId() {
+	public Long getId() {
 		return Id;
 	}
 	public void setId(Long id) {
 		Id = id;
 	}
 	@Column
-	public Long getMenuId() {
-		return menuId;
+	public String getRoleName() {
+		return roleName;
 	}
-	public void setMenuId(Long menuId) {
-		this.menuId = menuId;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
-	@Column
-	public Long getUserId() {
-		return userId;
+	
+	public String getDescription() {
+		return description;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+
+	private String roleName;
+	private String description;
+	
 }
