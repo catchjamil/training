@@ -15,87 +15,68 @@ public class Transfer implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int id;
-	private String SourceAcc; 
-	private String Oor;
-	private String TransferAmount;
-	private String DestinationAcc; 
-	private String Beneficiary;
-	private String Ifsc;
-	private String PaymentDetail; 
-	
+	private String sourceAcc; 
+	private String oor;
+	private String transferAmount;
+	private String destinationAcc; 
+	private String beneficiary;
+	private String ifsc;
+	private String paymentDetail; 
 	
 	@Column(name="Source_Account")
 	public String getSourceAcc() {
-		return SourceAcc;
+		return sourceAcc;
 	}
-
 	public void setSourceAcc(String sourceAcc) {
-		SourceAcc = sourceAcc;
+		this.sourceAcc = sourceAcc;
 	}
-	
 	@Column(name="Oor")
 	public String getOor() {
-		return Oor;
+		return oor;
 	}
-
 	public void setOor(String oor) {
-		Oor = oor;
+		this.oor = oor;
 	}
-	
 	@Column(name="Transfer_Amount")
 	public String getTransferAmount() {
-		return TransferAmount;
+		return transferAmount;
 	}
-
 	public void setTransferAmount(String transferAmount) {
-		TransferAmount = transferAmount;
+		this.transferAmount = transferAmount;
 	}
-	
 	@Column(name="Destination_Account")
 	public String getDestinationAcc() {
-		return DestinationAcc;
+		return destinationAcc;
 	}
-
 	public void setDestinationAcc(String destinationAcc) {
-		DestinationAcc = destinationAcc;
+		this.destinationAcc = destinationAcc;
 	}
-	
 	@Column(name="Beneficiary")
 	public String getBeneficiary() {
-		return Beneficiary;
+		return beneficiary;
 	}
-
 	public void setBeneficiary(String beneficiary) {
-		Beneficiary = beneficiary;
+		this.beneficiary = beneficiary;
 	}
-
 	@Column(name="IFSC")
 	public String getIfsc() {
-		return Ifsc;
+		return ifsc;
 	}
-
 	public void setIfsc(String ifsc) {
-		Ifsc = ifsc;
+		this.ifsc = ifsc;
 	}
-
 	@Column(name="Payment_Detail")
+
 	public String getPaymentDetail() {
-		return PaymentDetail;
+		return paymentDetail;
 	}
-
-
-
 	public void setPaymentDetail(String paymentDetail) {
-		PaymentDetail = paymentDetail;
+		this.paymentDetail = paymentDetail;
 	}
-	
-	
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	
-	
 	@Id
 	@GeneratedValue
 	@Column(name="id")

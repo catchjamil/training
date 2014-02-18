@@ -1,5 +1,6 @@
 package com.sd.training.struts2.action;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,8 @@ import com.sd.training.struts2.bean.Transfer;
 import com.sd.training.struts2.dao.TransferDao;
 import com.sd.training.struts2.daoimpl.PayeeDaoImpl;
 import com.sd.training.struts2.daoimpl.TransferDaoImp;
+import com.sd.training.struts2.service.TransferService;
+import com.sd.training.struts2.serviceImpl.TransferServiceImp;
 
 public class TransferAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
@@ -17,8 +20,8 @@ public class TransferAction extends ActionSupport{
 	
 	private Transfer transfer;
 	public String execute() {
-		TransferDao transferDao =new TransferDaoImp();			
-		List<Payee> accountList = transferDao.getAccountList();
+		TransferService transferService=new TransferServiceImp();	
+		List<Payee> accountList = transferService.getPayeeList();
 		
 		List<String> accounts1 = new ArrayList<String>();
 		for(Payee payee : accountList){
