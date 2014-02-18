@@ -14,11 +14,11 @@
          <action name="fwdToUserRegistration" class="com.sd.training.struts2.action.UserAction" method="fwdToUserRegistration">
             <result name="fwdToUserRegistration">/UserForm.jsp</result>
         </action>
-         <action name="fwdToAddPayee" class="com.sd.training.struts2.action.LoginAction" method="fwdToAddPayee">
+         <action name="fwdToAddPayee" class="com.sd.training.struts2.action.PayeeAction" method="fwdToAddPayee">
             <result name="fwdToAddPayee">/AddPayee.jsp</result>
         </action>
-         <action name="fwdToTransfer" class="com.sd.training.struts2.action.LoginAction" method="fwdToTransfer">
-            <result name="fwdToTransfer">/Transfser.jsp</result>
+         <action name="fwdToTransfer" class="com.sd.training.struts2.action.TransferAction" method="fwdToTransfer">
+            <result name="fwdToTransfer">/Transfer.jsp</result>
         </action>
        
         
