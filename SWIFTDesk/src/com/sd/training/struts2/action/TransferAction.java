@@ -19,6 +19,16 @@ public class TransferAction extends ActionSupport{
 	private static String TRANSFER_FORM="transfer";
 	
 	private Transfer transfer;
+	public Transfer getTransfer() {
+		return transfer;
+	}
+
+
+	public void setTransfer(Transfer transfer) {
+		this.transfer = transfer;
+	}
+
+
 	public String execute() {
 		TransferService transferService=new TransferServiceImp();	
 		List<Payee> accountList = transferService.getPayeeList();
@@ -29,7 +39,7 @@ public class TransferAction extends ActionSupport{
 			accounts1.add(account_no+"");
 		}
 		setAccounts(accounts1);
-		return FWD_TO_TRANSFER;
+		return TRANSFER_FORM;
 	}
 	
 	

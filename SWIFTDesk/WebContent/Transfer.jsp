@@ -19,11 +19,8 @@ function validateForm() {
 <s:form action="transfer" onsubmit="return validateForm()">
 <table border="1">
 <s:property value="message"/>
+<s:div id="sac_no" name="transfer.sourceAcc"></s:div>
 
-<s:select label="Select Account" 
-		headerKey="-1" headerValue="Select Account Engines"
-		list="accounts" 
-		name="transfer.sourceAcc" />
 <s:textfield  label="Originator of Remitance" name="transfer.oor"/>
 <tr>
 <td><td><label id=ioor style="color: red">&nbsp;</label>
@@ -31,7 +28,7 @@ function validateForm() {
 <tr>
 <td><td><label id=ita style="color: red">&nbsp;</label>
 
-<s:div id=ac_no name="transfer.DestinationAcc"></s:div>
+<s:div id="dac_no" name="transfer.DestinationAcc"></s:div>
 
 <s:select label="Select Account" 
 		headerKey="-1" headerValue="Select Account Engines"

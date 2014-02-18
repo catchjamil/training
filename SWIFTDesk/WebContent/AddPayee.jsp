@@ -105,6 +105,7 @@ function validateForm(){
 	<tr>
 	<th colspan="2">
 	<h3>Payee Details</h3>
+	<tr>
 	<th colspan="2"><s:property value="message"/>
 	<s:textfield size="35" maxlength="18" name="payee.account_no"  label="Payee Account Number" onblur="validac()" />
 	<td>
@@ -121,9 +122,10 @@ function validateForm(){
 	<s:label   value="xxxxxxxxxx" label="Payee Registration alert to be sent on mobile no" />
 	<td>
 	<td><label>&nbsp; </label>
-	<s:submit value="  Add " /> 
-	<s:reset value="Reset" />
+	
+	<s:submit value="  Add " />
+	<s:reset value="Reset"/>
+	
 	</table>
 	</s:form>
-</body>
 </html>
