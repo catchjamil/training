@@ -22,7 +22,7 @@ public class HelloAction extends ActionSupport {
 	public String execute() {
 		System.out.println("Hi: "+getHelloTextFiled());
 		
-		PayeeDaoImpl payeeDaoImpl = new PayeeDaoImpl();
+		/*PayeeDaoImpl payeeDaoImpl = new PayeeDaoImpl();
 		List<Payee> accountList = payeeDaoImpl.getAccountList();
 		
 		List<String> accounts1 = new ArrayList<String>();
@@ -30,7 +30,7 @@ public class HelloAction extends ActionSupport {
 			long account_no = payee.getAccount_no();
 			accounts1.add(account_no+"");
 		}
-		setAccounts(accounts1);
+		setAccounts(accounts1);*/
 		displCountry();
 		return "helloForm";
 	}
@@ -57,6 +57,8 @@ public class HelloAction extends ActionSupport {
 	private String data = "Afghanistan, Zimbabwe, India, United States, Germany, China,Australia";
 	private List<String> countries;
 	private String country;
+	
+	
 	private void displCountry() {
 	countries = new ArrayList<String>();
 	StringTokenizer st = new StringTokenizer(data, ",");
