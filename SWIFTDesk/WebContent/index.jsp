@@ -11,8 +11,10 @@
 	</s:form>
 	
 	<br>
-	<a href="fwdToUserRegistration.action">User Registration</a></br>
+	<a href="fwdToUserRegistration.action">User Registration</a>
 	<a href="hello.action">Say Hello</a>
+	<br>
+	<a href="Role.action">ROLE SEARCH FORM</a>
 	
 </body>
 </html>
