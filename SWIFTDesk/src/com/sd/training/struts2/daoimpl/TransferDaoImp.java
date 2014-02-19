@@ -33,9 +33,9 @@ public class TransferDaoImp implements TransferDao{
 	public List<Payee> getPayeeList() throws RuntimeException {
 		
 		Session session=HibernateUtil.openSession();
-		Query createQuery = session.createQuery("from payee_info");
+		Query createQuery = session.createQuery("from Payee");
 		List<Payee> arrayList = new ArrayList<Payee>();
-		List list = createQuery.list();
+		List<?> list = createQuery.list();
 		
 		for(Object obj:list){
 			Payee payee = (Payee)obj;

@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-Hello <s:property value="user.uname" />, welcome to Training
+Hello <s:property value="uname" />, welcome to Training
 
 
 <br>

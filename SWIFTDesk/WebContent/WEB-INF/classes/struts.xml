@@ -17,7 +17,7 @@
          <action name="fwdToAddPayee" class="com.sd.training.struts2.action.PayeeAction" method="fwdToAddPayee">
             <result name="fwdToAddPayee">/AddPayee.jsp</result>
         </action>
-         <action name="fwdToTransfer" class="com.sd.training.struts2.action.TransferAction" method="fwdToTransfer">
+         <action name="fwdToTransfer" class="com.sd.training.struts2.action.TransferAction" >
             <result name="fwdToTransfer">/Transfer.jsp</result>
         </action>
        
