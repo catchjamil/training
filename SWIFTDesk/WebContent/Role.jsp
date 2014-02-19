@@ -11,7 +11,7 @@
 <h2 align="center"> <u>ROLE SEARCH FORM</u></h2>
 <s:form action="role" />
 
-<s:textfield name="roleTextFiled" label="Enter Name "/>
+
 
 <s:select label="Select Country" 
 		headerKey="-1" headerValue="Select Country Engines"
