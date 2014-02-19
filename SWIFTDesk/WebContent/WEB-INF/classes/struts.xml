@@ -41,7 +41,7 @@
             <result name="helloForm">/HelloForm.jsp</result>
         </action>
         
-        <action name="role" class="com.sd.training.struts2.action.RoleAction">
+        <action name="role" class="com.sd.training.struts2.action.RoleAction" method="fwdtoRole">
             <result name="role">/Role.jsp</result>
         </action>
         
