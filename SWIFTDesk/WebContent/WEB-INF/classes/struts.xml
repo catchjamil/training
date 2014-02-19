@@ -41,6 +41,9 @@
             <result name="helloForm">/HelloForm.jsp</result>
         </action>
         
+        <action name="role" class="com.sd.training.struts2.action.RoleAction">
+            <result name="role">/Role.jsp</result>
+        </action>
         
     </package>
 </struts>
