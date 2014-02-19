@@ -14,7 +14,7 @@
 	<a href="fwdToUserRegistration.action">User Registration</a>
 	<a href="hello.action">Say Hello</a>
 	
-	<a href="Role.Action">ROLE SEARCH FORM</a>
+	<a href="role.action">ROLE SEARCH FORM</a>
 	
 </body>
 </html>
