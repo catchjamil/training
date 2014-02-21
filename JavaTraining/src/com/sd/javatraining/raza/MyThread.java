@@ -1,10 +1,16 @@
 package com.sd.javatraining.raza;
+//
+/*
+thread 1 is holding the lock to object synA and thread 2 is holding the lock to object synB. 
+Thread 1 is waiting to acquire the lock to object synB and thread 2 is waiting to acquire 
+the lock to object synA. Both threads are in deadlock and cannot proceed
+*/
 
 class SynA{
 	synchronized void show(SynB b){
 		try {
 			for(int i=0;i<5;i++){
-				Thread.sleep(1000);
+				Thread.sleep(500);
 				System.out.println("show: "+i+Thread.currentThread());
 			}
 			
@@ -25,7 +31,7 @@ class SynB{
 	 synchronized void show(SynA a){
 		try {
 			for(int i=0;i<5;i++){
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			System.out.println("show: "+i+Thread.currentThread());
 			}
 			
@@ -76,20 +82,24 @@ class Demo1 extends Thread{
 
 
 public class MyThread extends Thread{
+	public static void main(String[] args) {
 	SynA synA=new SynA();
 	SynB synB=new SynB();
 	
-	public MyThread() {
+	
 		Demo demo=new Demo(synA,synB);
 		demo.start();
 		Demo1 demo1=new Demo1(synA,synB);
 		demo1.start();
+		try {
+			demo.join(5000);
+			demo1.join(5000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 		System.out.println("back in main thread");
-	}
-	
-	public static void main(String[] args) {
 		
-		new MyThread();
 		
 	}
 	
