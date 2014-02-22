@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<s:form action="menu">
+<s:form action="menuForm">
 <s:textfield  name="menu.menuId" label="Menu ID"/>
 <s:textfield  name="menu.name" label="Menu Name"/>
 <s:textfield  name="menu.href" label="Link "/>
