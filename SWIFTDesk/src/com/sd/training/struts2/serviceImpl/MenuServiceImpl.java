@@ -16,5 +16,13 @@ public class MenuServiceImpl implements MenuService {
 	  return menuDao.menuList(user);
 	}
 
+	@Override
+	public Menu save(Menu menu) throws RuntimeException {
+		MenuDao menuDao=new MenuDaoImpl();
+		menu=menuDao.save(menu);
+	
+		return menu;
+	}
+
 	
 }
