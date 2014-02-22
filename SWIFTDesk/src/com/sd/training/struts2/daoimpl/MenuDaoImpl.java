@@ -10,7 +10,6 @@ import org.hibernate.Transaction;
 import com.sd.training.struts2.bean.Menu;
 import com.sd.training.struts2.bean.User;
 import com.sd.training.struts2.dao.MenuDao;
-import com.sd.training.struts2.service.MenuService;
 import com.sd.training.struts2.util.HibernateUtil;
 
 public class MenuDaoImpl implements MenuDao {
@@ -32,5 +31,13 @@ public class MenuDaoImpl implements MenuDao {
 
 	}
 
+	@Override
+	public Menu save(Menu menu)throws RuntimeException {
 		
+		return menu;
+	}
+
+	
+
+
 }
