@@ -20,7 +20,7 @@
          <action name="fwdToTransfer" class="com.sd.training.struts2.action.TransferAction" >
             <result name="fwdToTransfer">/Transfer.jsp</result>
         </action>
-         <action name="fwdToMenu" class="com.sd.training.struts2.action.TransferAction"  method="fwdToMenu">
+         <action name="fwdToMenu" class="com.sd.training.struts2.action.MenuAction"  method="fwdToMenu">
             <result name="fwdToMenu">/Menu.jsp</result>
         </action>
        
