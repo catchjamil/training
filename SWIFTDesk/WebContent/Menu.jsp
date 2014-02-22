@@ -4,12 +4,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+      <title>Menu Link Adder</title>
+      
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
 </head>
 <body>
-<s:form action="menuForm">
-<s:textfield  name="menu.menuId" label="Menu ID"/>
+<s:form action="menuForm" >
+<s:property value="message"/>
+<br>
 <s:textfield  name="menu.name" label="Menu Name"/>
 <s:textfield  name="menu.href" label="Link "/>
 <s:textfield  name="menu.parentId" label="Parent ID"/>
