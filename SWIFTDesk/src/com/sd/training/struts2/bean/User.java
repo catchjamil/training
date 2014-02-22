@@ -5,15 +5,29 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 
 @Entity	
 @Table(name="user_info")
 public class User implements Serializable{
 	private static final long serialVersionUID = 2006827975533105606L;
+	
+	private long accountNo;
+	
+	@Column(name="account_no")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	public long getAccountNo() {
+		return accountNo;
+	}
 
+	public void setAccountNo(long accountNo) {
+		this.accountNo = accountNo;
+	}
 	private int id;
 	private String uname; 
 	private String password;
