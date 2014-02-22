@@ -11,4 +11,6 @@ Hello <s:property value="uname" />, welcome to Training
 	<a href="fwdToAddPayee.action">Add Payee</a>
 	<br>
 	<a href="fwdToTransfer.action">Fund Transfer</a>
+	<br>
+	<a href="fwdToMenu.action">Menu Link Adder</a>
 	
