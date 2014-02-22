@@ -9,13 +9,12 @@ import org.hibernate.Transaction;
 
 import com.sd.training.struts2.bean.Payee;
 import com.sd.training.struts2.bean.Transfer;
+import com.sd.training.struts2.bean.User;
 import com.sd.training.struts2.dao.TransferDao;
 import com.sd.training.struts2.util.HibernateUtil;
 
 public class TransferDaoImp implements TransferDao{
 	
-	private static final Object Payee = null;
-
 	@Override
 	public Transfer save(Transfer transfer) throws RuntimeException {
 		try {
@@ -43,6 +42,19 @@ public class TransferDaoImp implements TransferDao{
 		
 	}
 		
+		return arrayList;
+	}
+
+	@Override
+	public List<User> getAcoountList(String username) {
+		Session session=HibernateUtil.openSession();
+		Query createQuery = session.createQuery("from User");
+		List<User> arrayList = new ArrayList<User>();
+		List<?> list = createQuery.list();	
+		for(Object obj:list){
+			User user = (User)obj;
+			arrayList.add(user);
+		}
 		return arrayList;
 	}
 
