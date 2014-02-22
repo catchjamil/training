@@ -54,18 +54,30 @@ public class LoginAction extends ActionSupport {
 		menuList.add(menu1);
 		menuList.add(menu2);
 	}
-
+	StringBuffer stringBuffer = new StringBuffer();
 	public String execute() {
 		LoginService loginServiceImpl = new LoginServiceImpl();
 		if (loginServiceImpl.authenticateUser(this.getUser())) {
-			MenuService menuService = new MenuServiceImpl();
-			//setMenuList(menuService.menuList(user));
+		/*	MenuService menuService = new MenuServiceImpl();
+			List<Menu> menuList2 = menuService.menuList(user);
+			for(Menu menu: menuList2){
+				menu.getName()
+				menu.getHref()
+				
+				stringBuffer.append("<li class=\"active\"><a href=\"");
+				stringBuffer.append(menu.getHref());
+				stringBuffer.append("\">");
+				stringBuffer.append(menu.getName());
+				stringBuffer.append("</a></li>");
+			}
+		*/	//setMenuList(menuService.menuList(user));
 			return SUCCESS;
 		} else {
 			return ERROR;
 		}
 
 	}
+	
 	
 	
 
