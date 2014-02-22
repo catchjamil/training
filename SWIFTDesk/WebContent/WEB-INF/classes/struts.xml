@@ -50,8 +50,8 @@
         <action name="role" class="com.sd.training.struts2.action.RoleAction" method="fwdtoRole">
             <result name="role">/Role.jsp</result>
         </action>
-         <action name="menu" class="com.sd.training.struts2.action.MenuAction" method="save">
-            <result name="menu">/Menu.jsp</result>
+         <action name="menuForm" class="com.sd.training.struts2.action.MenuAction" method="save">
+            <result name="menuForm">/Menu.jsp</result>
         </action>
         
     </package>
