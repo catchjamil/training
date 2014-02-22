@@ -20,6 +20,9 @@
          <action name="fwdToTransfer" class="com.sd.training.struts2.action.TransferAction" >
             <result name="fwdToTransfer">/Transfer.jsp</result>
         </action>
+         <action name="fwdToMenu" class="com.sd.training.struts2.action.TransferAction"  method="fwdToMenu">
+            <result name="fwdToMenu">/Menu.jsp</result>
+        </action>
        
         
         <action name="userForm" class="com.sd.training.struts2.action.UserAction" method="save">
@@ -43,6 +46,9 @@
         
         <action name="role" class="com.sd.training.struts2.action.RoleAction" method="fwdtoRole">
             <result name="role">/Role.jsp</result>
+        </action>
+         <action name="menu" class="com.sd.training.struts2.action.MenuAction" method="save">
+            <result name="menu">/Menu.jsp</result>
         </action>
         
     </package>
