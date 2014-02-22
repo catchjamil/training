@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="struts-default.xml"/>
+    <package name="a" extends="struts-default">
+        <action name="verify" class="com.sd.training.struts2.action.LoginAction">
+            <result name="success">/success.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+         <action name="fwdToUserRegistration" class="com.sd.training.struts2.action.UserAction" method="fwdToUserRegistration">
+            <result name="fwdToUserRegistration">/UserForm.jsp</result>
+        </action>
+         <action name="fwdToAddPayee" class="com.sd.training.struts2.action.PayeeAction" method="fwdToAddPayee">
+            <result name="fwdToAddPayee">/AddPayee.jsp</result>
+        </action>
+         <action name="fwdToTransfer" class="com.sd.training.struts2.action.TransferAction" >
+            <result name="fwdToTransfer">/Transfer.jsp</result>
+        </action>
+       
+        
+        <action name="userForm" class="com.sd.training.struts2.action.UserAction" method="save">
+            <result name="userForm">/UserForm.jsp</result>
+            
+        </action>
+         <action name="bicForm" class="com.sd.training.struts2.action.BicAction" method="save">
+            <result name="bicForm">/BicForm.jsp</result>
+            
+        </action>
+        <action name="addPayee" class="com.sd.training.struts2.action.PayeeAction" method="save">
+            <result name="addPayee">/AddPayee.jsp</result>
+            
+        </action>
+         <action name="transfer" class="com.sd.training.struts2.action.TransferAction">
+            <result name="transfer">/Transfer.jsp</result>
+        </action>
+        <action name="hello" class="com.sd.training.struts2.action.HelloAction">
+            <result name="helloForm">/HelloForm.jsp</result>
+        </action>
+        
+        <action name="role" class="com.sd.training.struts2.action.RoleAction" method="fwdtoRole">
+            <result name="role">/Role.jsp</result>
+        </action>
+        
+    </package>
+</struts>
