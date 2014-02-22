@@ -33,7 +33,17 @@ public class MenuDaoImpl implements MenuDao {
 
 	@Override
 	public Menu save(Menu menu)throws RuntimeException {
-		
+		try {
+			Session session=HibernateUtil.openSession();
+			Transaction transaction=session.beginTransaction();
+			session.save(menu);
+			transaction.commit();
+			session.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		return null;
+		}
 		return menu;
 	}
 
