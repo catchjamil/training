@@ -19,17 +19,18 @@ public class Menu  implements Serializable{
 	
 	 @Id 
 	 @GeneratedValue
-	private Long menuId;
-	public Long getMenuId() {
+	 private Long menuId;
+	 private String name;
+	 private Long parentId;
+	 private String href;
+
+	 public Long getMenuId() {
 		return menuId;
 	}
 
 	public void setMenuId(Long menuId) {
 		this.menuId = menuId;
 	}
-
-	private String name;
-	private Long parentId;
 	@Column
 	public String getHref() {
 		return href;
@@ -38,8 +39,6 @@ public class Menu  implements Serializable{
 	public void setHref(String href) {
 		this.href = href;
 	}
-
-	private String href;
 
 	@Column
 	 public Long getParentId() {
