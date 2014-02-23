@@ -34,7 +34,7 @@ class ThreadTest extends Thread{
 	}
 }
 
-public class ThreadCommunication {
+public class ThreadNotify {
 	public static void main(String[] args) {
 		MathTest mathTest = new MathTest();
 		ThreadTest threadTest1 = new ThreadTest(mathTest);
