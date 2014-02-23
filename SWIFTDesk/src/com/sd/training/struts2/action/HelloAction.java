@@ -1,14 +1,17 @@
 package com.sd.training.struts2.action;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import com.opensymphony.xwork2.ActionSupport;
-import com.sd.training.struts2.bean.Payee;
-import com.sd.training.struts2.daoimpl.PayeeDaoImpl;
+import javax.servlet.http.HttpServletResponse;
 
-public class HelloAction extends ActionSupport {
+import org.apache.struts2.interceptor.ServletResponseAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class HelloAction extends ActionSupport implements ServletResponseAware {
 	private static final long serialVersionUID = 1L;
 
 	private String helloTextFiled;
@@ -78,5 +81,24 @@ public class HelloAction extends ActionSupport {
 	public void setCountry(String country) {
 	this.country = country;
 	}
+	HttpServletResponse response;
+	public String ajaxDivUrl(){
+		   //String messageXml = "Sinhala|Tamil|English|This is description";
+		String messageXml = "india";
+	        System.out.println("Ajax request receive with id : [] and reply value : " + messageXml);
+	        response.setContentType("text/html;charset=UTF-8");
+	        response.setHeader("Cache-Control", "no-cache");
+	        try {
+	            response.getWriter().write(messageXml);
+	        } catch (IOException ioe) {
+	            ioe.printStackTrace();
+	        }
+	        return null;
+	}	
+	
+	   @Override
+	    public void setServletResponse(HttpServletResponse httpServletResponse) {
+	        this.response = httpServletResponse;
+	    }
 	
 }
