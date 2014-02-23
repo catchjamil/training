@@ -47,6 +47,11 @@
             <result name="helloForm">/HelloForm.jsp</result>
         </action>
         
+        <action name="ajaxDivUrl" class="com.sd.training.struts2.action.HelloAction" method="ajaxDivUrl">
+            <result name="ajaxDivUrl">/HelloForm.jsp</result>
+        </action>
+        
+        
         <action name="role" class="com.sd.training.struts2.action.RoleAction" method="fwdtoRole">
             <result name="role">/Role.jsp</result>
         </action>
