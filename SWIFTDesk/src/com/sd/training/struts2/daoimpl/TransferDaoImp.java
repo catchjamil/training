@@ -58,4 +58,17 @@ public class TransferDaoImp implements TransferDao{
 		return arrayList;
 	}
 
+	@Override
+	public List<Payee> getDesAcNo(String payee) {
+		Session session=HibernateUtil.openSession();
+		Query createQuery = session.createQuery("from Payee where Name='"+payee+"'");
+		List<Payee> arrayList = new ArrayList<Payee>();
+		List<?> list = createQuery.list();	
+		for(Object obj:list){
+			Payee payee2 = (Payee)obj;
+			arrayList.add(payee2);
+		}
+		return arrayList;
+	}
+
 }

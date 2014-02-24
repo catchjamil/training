@@ -33,6 +33,13 @@ public class TransferServiceImp implements TransferService {
 		return list;
 	}
 
+	@Override
+	public List<Payee> getDesAcNo(String payee) {
+		TransferDao transferDao= new TransferDaoImp();
+		List<Payee> list=transferDao.getDesAcNo(payee);
+		return list;
+	}
+
 	
 
 

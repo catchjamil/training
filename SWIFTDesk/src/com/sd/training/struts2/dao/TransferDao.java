@@ -10,4 +10,5 @@ public interface TransferDao {
 	public Transfer save(Transfer transfer)throws RuntimeException;
 	public List<Payee> getPayeeList()  throws RuntimeException;
 	public List<User> getAcoountList(String username);
+	public List<Payee> getDesAcNo(String payee);
 }

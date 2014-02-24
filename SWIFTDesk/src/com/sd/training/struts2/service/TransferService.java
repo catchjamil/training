@@ -11,7 +11,7 @@ public interface TransferService {
 
 	public List<Payee> getPayeeList();
 	public List<User> getAccountList(String usernane);
-
+	public List<Payee> getDesAcNo(String payee);
 	
 }
 
