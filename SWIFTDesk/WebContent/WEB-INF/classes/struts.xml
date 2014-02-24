@@ -40,7 +40,7 @@
          <action name="transfer" class="com.sd.training.struts2.action.TransferAction" method="save">
             <result name="transfer">/Transfer.jsp</result>
         </action>
-                 <action name="account" class="com.sd.training.struts2.action.TransferAction" method="addAccount">
+                 <action name="getDesAcNo" class="com.sd.training.struts2.action.TransferAction" method="getDesAcNo">
            		<result name="transfer">/Transfer.jsp</result>
         </action>
         <action name="hello" class="com.sd.training.struts2.action.HelloAction">
