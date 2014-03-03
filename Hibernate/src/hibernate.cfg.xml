@@ -14,6 +14,9 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		
 		<mapping class="com.sd.trainging.hibernate.pojo.Student" />
+		<mapping class="com.sd.trainging.hibernate.pojo.StudentDetails" />
+		<mapping class="com.sd.trainging.hibernate.pojo.Marksheet" />
+		<mapping class="com.sd.trainging.hibernate.pojo.Teacher" />
 		
 	</session-factory>
 </hibernate-configuration>
