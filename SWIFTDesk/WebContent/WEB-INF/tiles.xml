@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="welcome" template="/baseLayout.jsp">   
+      <put-attribute name="myHeader" value="/head.jsp"/>   
+      <put-attribute name="myBody"   value="/body.jsp"/>
+       <put-attribute name="mymenu"   value="/menu1.jsp"/>
+      <put-attribute name="myFooter"   value="/footer.jsp"/>
+  </definition>  
+ <definition name="index" extends="welcome">
+      <put-attribute name="myBody"  value="/index.jsp"/>      
+  </definition>
+ 
+ <definition name="UserForm" extends="welcome">
+      <put-attribute name="myBody"  value="/UserForm.jsp"/>      
+  </definition>
+ 
+ <definition name="AddPayee" extends="welcome">
+      <put-attribute name="myBody"  value="/AddPayee.jsp"/>      
+  </definition>
+  
+ <definition name="Transfer" extends="welcome">
+      <put-attribute name="myBody"  value="/Transfer.jsp"/>      
+  </definition>
+  
+ <definition name="Menu" extends="welcome">
+      <put-attribute name="myBody"  value="/Menu.jsp"/>      
+  </definition>
+  
+<definition name="BicForm" extends="welcome">
+      <put-attribute name="myBody"  value="/BicForm.jsp"/>      
+  </definition>
+ 
+<definition name="HelloForm" extends="welcome">
+      <put-attribute name="myBody"  value="/HelloForm.jsp"/>      
+  </definition>
+  
+<definition name="Role" extends="welcome">
+      <put-attribute name="myBody"  value="/Role.jsp"/>      
+  </definition>
+  
+<definition name="success" extends="welcome">
+      <put-attribute name="myBody"  value="/success.jsp"/>      
+  </definition>
+  
+<definition name="error" extends="welcome">
+      <put-attribute name="myBody"  value="/error.jsp"/>      
+  </definition>
+ 
+ 
+</tiles-definitions>
