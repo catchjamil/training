@@ -19,17 +19,18 @@ public class Menu  implements Serializable{
 	
 	 @Id 
 	 @GeneratedValue
-	private Long menuId;
-	public Long getMenuId() {
-		return menuId;
-	}
-
-	public void setMenuId(Long menuId) {
-		this.menuId = menuId;
-	}
+	private Long Id;
 
 	private String name;
 	private Long parentId;
+	
+	public Long getId() {
+		return Id;
+	}
+	
+	public void setId(Long id) {
+		Id = id;
+	}
 	@Column
 	public String getHref() {
 		return href;

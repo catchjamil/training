@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.sd.training.struts2.bean.Menu;
+import com.sd.training.struts2.bean.Role;
 import com.sd.training.struts2.bean.User;
 import com.sd.training.struts2.dao.MenuDao;
 import com.sd.training.struts2.util.HibernateUtil;
@@ -19,15 +20,18 @@ public class MenuDaoImpl implements MenuDao {
 		Session session = HibernateUtil.openSession();
 		
 		 int roleId = user.getRoleID();
-		 Query createQuery = session.createQuery("from RoleMenuMapping where roleId="+roleId);
-		List<Menu> menus = new ArrayList<Menu>();
-		 List list = createQuery.list();
-		 for(Object o:list){
-			 menus.add((Menu)o);
+		 Query createQuery = session.createQuery("from Role where Id="+roleId);
+		 List<Role> list = (List<Role>)createQuery.list();
+		 Role role = new Role();
+		 if(list != null && list.size() >0){
+			 role = list.get(0);
 		 }
-		
+		 List<Menu> menuList = new ArrayList<Menu>();
+		 for(Menu menu : role.getMenu()){
+			 menuList.add(menu);
+		 }
 		session.close();
-	return menus;	
+	return 	menuList;
 
 	}
 

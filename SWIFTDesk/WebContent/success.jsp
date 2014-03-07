@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
    <head>
       <title>Bootstrap 101 Template</title>
@@ -67,70 +68,19 @@
       
    </head>
    <body>
-      <h1>Hello, world!</h1>
+
  <nav class="navbar navbar-default" role="navigation">
-      
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Brand</a>
-  </div>
  
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multi Level <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Level 1</a></li>
-          <li class="dropdown-submenu"> <a tabindex="-1" href="#">More options</a>
-              <ul class="dropdown-menu">
-                  <li><a tabindex="-1" href="#">Level 2</a>
-                  </li>
-                  <li class="dropdown-submenu"> <a href="#">More..</a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#">Level 3</a>
-                          </li>
-                          <li><a href="#">Level 3</a>
-                          </li>
-                          <li class="dropdown-submenu"> <a href="#">More..</a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">Level 4</a>
-                                  </li>
-                                  <li><a href="#">Level 4</a>
-                                  </li>
-                                  <li class="dropdown-submenu"> <a href="#">More..</a>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="#">Level 5</a>
-                                          </li>
-                                          <li><a href="#">Level 5</a>
-                                          </li>
-                                      </ul>
-                                  </li>
- 
-                              </ul>
-                          </li>
- 
-                      </ul>
-                  </li>
-                  <li><a href="#">Level 2</a>
-                  </li>
-                  <li><a href="#">Level 2</a>
-                  </li>
-              </ul>
-          </li>
-          <li><a href="#">Level 1</a></li>
-        </ul>
-      </li>
-    </ul>
+      <li class="active"><a href="#">Home</a></li>
+		<%out.println(session.getAttribute("menuMessage")); %>
+     </ul>
   </div>
 </nav>
+
+
 
 	<a href="fwdToAddPayee.action">Add Payee</a>
 	<br>

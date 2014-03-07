@@ -2,16 +2,18 @@ package com.sd.training.struts2.action;
 
 import java.util.List;
 
-import com.opensymphony.xwork2.ActionSupport;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import org.apache.struts2.interceptor.ServletRequestAware;
+
+import com.opensymphony.xwork2.ActionSupport;
 import com.sd.training.struts2.bean.Menu;
 import com.sd.training.struts2.bean.User;
 import com.sd.training.struts2.service.LoginService;
-import com.sd.training.struts2.service.MenuService;
 import com.sd.training.struts2.serviceImpl.LoginServiceImpl;
-import com.sd.training.struts2.serviceImpl.MenuServiceImpl;
 
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String SUCCESS = "success";
@@ -39,27 +41,14 @@ public class LoginAction extends ActionSupport {
 	public void setMenuList(List<Menu> menuList) {
 		this.menuList = menuList;
 		
-		Menu menu1=new Menu();
-		
-		menu1.setMenuId(1L);
-		menu1.setName("Registraion");
-		//menu1.setLinkName("fwdToUserRegistration.action");
-		
-		Menu menu2=new Menu();
-
-		menu2.setMenuId(2L);
-		menu2.setName("Hello");
-	//	menu2.setLinkName("hello.action");
-		
-		menuList.add(menu1);
-		menuList.add(menu2);
-	}
-
+			}
 	public String execute() {
 		LoginService loginServiceImpl = new LoginServiceImpl();
 		if (loginServiceImpl.authenticateUser(this.getUser())) {
-			MenuService menuService = new MenuServiceImpl();
-			//setMenuList(menuService.menuList(user));
+			getSession2().removeAttribute("menuMessage");
+			 MenuConfig menuConfig = new MenuConfig();
+			System.out.println(menuConfig.getMenuHtml());
+			getSession2().setAttribute("menuMessage", menuMessage);
 			return SUCCESS;
 		} else {
 			return ERROR;
@@ -67,11 +56,32 @@ public class LoginAction extends ActionSupport {
 
 	}
 	
+private String menuMessage;
 	
+public String getMenuMessage() {
+		return menuMessage;
+	}
 
-	
-	
+	public void setMenuMessage(String menuMessage) {
+		this.menuMessage = menuMessage;
+	}
+
 public static void main(String[] args) {
 		new LoginAction().execute();	
    }
+
+private HttpSession session2;
+public HttpSession getSession2() {
+	return session2;
+}
+
+public void setSession2(HttpSession session2) {
+	this.session2 = session2;
+}
+
+@Override
+public void setServletRequest(HttpServletRequest arg0) {
+	
+	setSession2(arg0.getSession());
+}
 }

@@ -1,11 +1,14 @@
 package com.sd.training.struts2.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 
@@ -19,8 +22,20 @@ public class Role  implements Serializable{
 	@Id 
 	@GeneratedValue
 	private Long Id;
+	@OneToMany(cascade={CascadeType.ALL})
+	private List<Menu> menu;
+	private String roleName;
+	private String description;
+	
+	
 	public Long getId() {
 		return Id;
+	}
+	public List<Menu> getMenu() {
+		return menu;
+	}
+	public void setMenu(List<Menu> menu) {
+		this.menu = menu;
 	}
 	public void setId(Long id) {
 		Id = id;
@@ -40,7 +55,5 @@ public class Role  implements Serializable{
 		this.description = description;
 	}
 
-	private String roleName;
-	private String description;
 	
 }
