@@ -15,25 +15,19 @@ public class MenuConfig {
 	/**
 	 * @param args
 	 */
-	static MenuConfig menuConfig = new MenuConfig();
-	public static void main(String[] args) {
-		
-		menuConfig.getMenuHtml();
-	}
 	
-	public String getMenuHtml(){
+	public String getMenuHtml(User user){
 
 		// TODO Auto-generated method stub
 		MenuService menuService = new MenuServiceImpl();
-		User user = new User();
-		user.setRoleID(1);
+		
 		StringBuffer stringBuffer = new StringBuffer();
 		List<Menu> menuList = menuService.menuList(user);
-		Map map = new HashMap();
+		Map<Menu,List<Menu>> map = new HashMap<Menu,List<Menu>>();
 		for (Menu menu : menuList) {
 
 			Long menuId = menu.getId();
-			List list = new ArrayList();
+			List<Menu> list = new ArrayList<Menu>();
 			for (Menu menu1 : menuList) {
 				if (menuId.equals(menu1.getParentId())) {
 					list.add(menu1);
@@ -45,30 +39,26 @@ public class MenuConfig {
 		}
 
 		for (Menu menu : menuList) {
-			Object object = map.get(menu);
-			if (object != null) {
+			List<Menu> listOfMenu = map.get(menu);
+			if (listOfMenu != null) {
 				stringBuffer
-						.append(menuConfig.getFirstLevelMenu(menu.getName()));
+						.append(getFirstLevelMenu(menu.getName()));
 
-				List listOfMenu = (List) object;
-				for (Object obj : listOfMenu) {
-					Menu menu1 = (Menu) obj;
-					object = map.get(menu1);
-					if (object != null) {
-						stringBuffer.append(menuConfig.getSubMenu(menu1
+				for (Menu menu1 : listOfMenu) {
+					listOfMenu = map.get(menu1);
+					if (listOfMenu != null) {
+						stringBuffer.append(getSubMenu(menu1
 								.getName()));
-						listOfMenu = (List) object;
-						for (Object obj1 : listOfMenu) {
-							Menu menu2 = (Menu) obj1;
-							stringBuffer.append(menuConfig.getSubMenuList(
+						for (Menu menu2 : listOfMenu) {
+							stringBuffer.append(getSubMenuList(
 									menu2.getHref(), menu2.getName()));
 						}
 					}else{
-						stringBuffer.append(menuConfig.getMainMenu(menu1.getHref(),	menu1.getName()));
+						stringBuffer.append(getMainMenu(menu1.getHref(),	menu1.getName()));
 					}
 				}
 			} else {
-				stringBuffer.append(menuConfig.getMainMenu(menu.getHref(),
+				stringBuffer.append(getMainMenu(menu.getHref(),
 						menu.getName()));
 			}
 

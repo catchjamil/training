@@ -17,11 +17,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String SUCCESS = "success";
-	
 	private static final String ERROR = "error";
-	
-	
-	
 	private User user;
 
 	public User getUser() {
@@ -31,7 +27,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	
 	private List<Menu> menuList;
 	
 	public List<Menu> getMenuList() {
@@ -47,8 +43,9 @@ public class LoginAction extends ActionSupport implements ServletRequestAware {
 		if (loginServiceImpl.authenticateUser(this.getUser())) {
 			getSession2().removeAttribute("menuMessage");
 			 MenuConfig menuConfig = new MenuConfig();
-			System.out.println(menuConfig.getMenuHtml());
-			getSession2().setAttribute("menuMessage", menuMessage);
+			String menuMessage = menuConfig.getMenuHtml(this.getUser());
+			System.out.println(menuMessage);
+			getSession2().setAttribute("menuMessage", menuMessage != null ? menuMessage:"Menu is not mapped with role");
 			return SUCCESS;
 		} else {
 			return ERROR;
@@ -56,19 +53,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware {
 
 	}
 	
-private String menuMessage;
-	
-public String getMenuMessage() {
-		return menuMessage;
-	}
-
-	public void setMenuMessage(String menuMessage) {
-		this.menuMessage = menuMessage;
-	}
-
-public static void main(String[] args) {
-		new LoginAction().execute();	
-   }
 
 private HttpSession session2;
 public HttpSession getSession2() {
