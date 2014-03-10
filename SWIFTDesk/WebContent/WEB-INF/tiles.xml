@@ -21,15 +21,15 @@
   </definition>
  
  <definition name="AddPayee" extends="welcome">
-      <put-attribute name="myBody"  value="/AddPayee.jsp"/>      
+      <put-attribute name="myBody"  value="/AddPayeeForm.jsp"/>      
   </definition>
   
  <definition name="Transfer" extends="welcome">
-      <put-attribute name="myBody"  value="/Transfer.jsp"/>      
+      <put-attribute name="myBody"  value="/TransferForm.jsp"/>      
   </definition>
   
  <definition name="Menu" extends="welcome">
-      <put-attribute name="myBody"  value="/Menu.jsp"/>      
+      <put-attribute name="myBody"  value="/MenuForm.jsp"/>      
   </definition>
   
 <definition name="BicForm" extends="welcome">
