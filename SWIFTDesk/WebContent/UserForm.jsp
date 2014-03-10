@@ -1,8 +1,10 @@
 
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<sb:head/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
@@ -117,53 +119,47 @@ function validateForm()
 }
 </script>
 </head>
-<body bgcolor="lightblue">
-	<h2 align="center">
-		<u>User Registration Form</u>
-	</h2>
-	<hr>
-	<br>
-	<table border=5 align="center" cellpadding="20" bgcolor="lightgrey">
+<body >
+<div class="control-label col-xs-10">
+<h1>User Creation</h1>
+<b><s:property value="message" /></b>
+ <s:form action="userForm" onsubmit="return validateForm()" cssClass="form-horizontal">
+<div class="form-group">
+<s:textfield size="30" name="user.uname"
+			label="Enter Username" onblur="validuname()" />
+<s:label id="un" cssStyle="color: red;">&nbsp;</s:label>
+</div>
+<div class="form-group">
+<s:password size="30" name="user.password"
+			label="Enter Password" onblur="validpass()" />
+<s:label id="pa" cssStyle="color: red;">&nbsp;</s:label>
+</div>
+<div class="form-group">
+<s:password size="30" name="user.passwordc"
+	label="Confirm Password" onblur="validpassc()" cssClass=""/>
+<s:label id="pac" cssStyle="color: red;">&nbsp;</s:label>
+</div>
+<div class="form-group">
+<s:textfield size="30" name="user.firstName"
+	label="First Name" onblur="validfname()" />
+<s:label id="fn" cssStyle="color: red;">&nbsp;</s:label>
+</div>
+<div class="form-group">
+<s:textfield size="30" name="user.lastName"
+	label="Last Name" onblur="validlname()" />
+<s:label id="ln" cssStyle="color: red;">&nbsp;</s:label>
+</div>
+<div class="form-group">
+<s:textfield size="30" name="user.email" label="E-mail"
+	onblur="validemail()" />
+<s:label id="em" cssStyle="color: red;">&nbsp;</s:label>
+</div>
+	<s:div cssClass="form-group">
+ <s:submit cssClass="btn btn-primary"/>
+ <s:reset cssClass="btn btn-danger"/>
+</s:div>
 
-		<tr>
-			<td><b><s:property value="message" /></b> <s:form
-					action="userForm" onsubmit="return validateForm()">
-
-					<tr>
-						<td><s:textfield size="30" name="user.uname"
-								label="Enter Username" onblur="validuname()" />
-						<td>
-						<td><label id="un" style="color: red;"> &nbsp;</label>
-					<tr>
-						<td><s:password size="30" name="user.password"
-								label="Enter Password" onblur="validpass()" />
-						<td>
-						<td><label id="pa" style="color: red;">&nbsp;</label>
-					<tr>
-						<td><s:password size="30" name="user.passwordc"
-								label="Confirm Password" onblur="validpassc()" />
-						<td>
-						<td><label id="pac" style="color: red;">&nbsp;</label>
-					<tr>
-						<td><s:textfield size="30" name="user.firstName"
-								label="First Name" onblur="validfname()" />
-						<td>
-						<td><label id="fn" style="color: red;">&nbsp;</label>
-					<tr>
-						<td><s:textfield size="30" name="user.lastName"
-								label="Last Name" onblur="validlname()" />
-						<td>
-						<td><label id="ln" style="color: red;">&nbsp;</label>
-					<tr>
-						<td><s:textfield size="30" name="user.email" label="E-mail"
-								onblur="validemail()" />
-						<td>
-						<td><label id="em" style="color: red;">&nbsp;</label>
-					<tr>
-						<td><s:submit value="Submit" /></td>
-						<td><s:reset value="Reset  " /></td>
-					</tr>
-				</s:form>
-	</table>
+</s:form>
+</div>
 </body>
 </html>
