@@ -12,7 +12,7 @@
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
 		
-		<action name="WelcomeLink" method="Welcome" class="com.sd.training.struts2.action.TileAction">
+		<action name="WelcomeLink"  class="com.sd.training.struts2.action.TileAction" method="Welcome">
 			<result name="welcome" type="tiles">index</result>
 			
 		</action>
@@ -53,7 +53,7 @@
             
         </action>
          <action name="transfer" class="com.sd.training.struts2.action.TransferAction" method="save">
-            <result name="transfer" type="tiles">AddPayee</result>
+            <result name="transfer" type="tiles">Transfer</result>
         </action>
                  <action name="getDesAcNo" class="com.sd.training.struts2.action.TransferAction" method="getDesAcNo">
            		<result name="transfer" type="tiles">Transfer</result>
@@ -72,6 +72,12 @@
         </action>
          <action name="menuForm" class="com.sd.training.struts2.action.MenuAction" method="save">
             <result name="menuForm" type="tiles">Menu</result>
+        </action>
+        
+        
+         <action name="accountform" class="com.sd.training.struts2.action.AccountAction" method="retreive">
+            <result name="accountform">AccountForm</result>
+           
         </action>
         
     </package>
