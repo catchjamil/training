@@ -154,6 +154,7 @@ function validateForm()
 	onblur="validemail()" />
 <s:label id="em" cssStyle="color: red;">&nbsp;</s:label>
 </div>
+<s:select list="role" label="User type" name="user.role" headerValue="select" headerKey="-1" />
 	<s:div cssClass="form-group">
  <s:submit cssClass="btn btn-primary"/>
  <s:reset cssClass="btn btn-danger"/>
