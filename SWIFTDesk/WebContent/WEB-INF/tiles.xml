@@ -51,6 +51,9 @@
 <definition name="error" extends="welcome">
       <put-attribute name="myBody"  value="/error.jsp"/>      
   </definition>
+  <definition name="AccountForm" extends="welcome">
+      <put-attribute name="myBody"  value="/AccountForm.jsp"/>      
+  </definition>
  
  
 </tiles-definitions>
