@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" >
+
 var xmlHttp;
 
 function ValueChanged(url) {
@@ -30,18 +31,26 @@ function ValueChanged(url) {
    xmlHttp.open("POST", url, true);
    xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded;charset=UTF-8");
    xmlHttp.send("name="+pname);
-   xmlHttp.onreadystatechange = showMessage
+   xmlHttp.onreadystatechange = showMessage;
 }
 
 function showMessage() {
 	   if (xmlHttp.readyState == 4) {	
-		   
-		document.getElementById("dac_no").value=xmlHttp.responseText;
-	 
-	  
+		   var str=xmlHttp.responseText;
+		   var tmp = str.split(',');
+		   var sel = document.getElementById("acc_no");
+		     sel.options.length=null;
+		     //sel.options[i]=//new Option(tmp[i], tmp[i]);
+		     for(var i=0; i<tmp.length-1; i++) {
+		   			 sel.options[i]=new Option(tmp[i], tmp[i]);
+		  }
+​
+		//document.getElementById("dac_no").value=xmlHttp.responseText;
    }
 }
-
+function ValidateForm(){
+return true;	
+}
 
 
 
@@ -49,7 +58,7 @@ function showMessage() {
 </head>
 <body>
 <h1 align="center">Fund Transfer</h1><hr><br>
-<s:form action="transfer"  onsubmit="return validateForm()" cssClass="" >
+<s:form action="transfer"  onsubmit="return validateForm()"  >
 <table border="1" bgcolor="lightgrey">
 <s:property value="message"/>
 
@@ -61,7 +70,7 @@ function showMessage() {
 <s:textfield  label="Originator of Remitance" name="transfer.oor"/>
 <tr>
 <td><td><label id=ioor style="color: red">&nbsp;</label>
-<s:textfield  label="Transfer Amount" name="transer.transferAmount"/>
+<s:textfield  label="Transfer Amount" name="transfer.transferAmount"/>
 <tr>
 <td><td><label id=ita style="color: red">&nbsp;</label>
 
@@ -70,7 +79,12 @@ function showMessage() {
 		headerKey="-1" headerValue="Select Payee"
 		list="payees" 
 		name="transfer.beneficiary"   onchange="ValueChanged('getDesAcNo.action')"/>
-<s:textfield name="transfer.DestinationAcc" label="Payee Account No." id="dac_no" disabled="true"/>	
+		<tr><td><label>Select Account No.</label>
+		<td>
+		 <select id="acc_no" name="des_no">
+    <option>Choose a acc number</option>
+  </select></tr>
+<!-- s:textfield name="transfer.DestinationAcc" label="Payee Account No." id="dac_no" disabled="true"/-->	
 <!-- s:select label="Select Payee Account" 
 		headerKey="-1" headerValue="Select Account"
 		list="payeeAcc"
