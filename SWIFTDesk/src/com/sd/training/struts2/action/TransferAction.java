@@ -24,6 +24,17 @@ public class TransferAction extends ActionSupport implements ServletRequestAware
 	private static String TRANSFER_FORM="transfer";
 	
 	private Transfer transfer;
+	private String message; 
+	public String getMessage() {
+		return message;
+	}
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
 	public Transfer getTransfer() {
 		return transfer;
 	}
@@ -50,7 +61,7 @@ public class TransferAction extends ActionSupport implements ServletRequestAware
 			String account_no = Integer.toString(user.getId());
 			accounts2.add(account_no+"");
 		}
-		getDesAcNo();
+	
 		setAccounts(accounts2);
 		return FWD_TO_TRANSFER;
 	}
@@ -98,21 +109,13 @@ public class TransferAction extends ActionSupport implements ServletRequestAware
 				String str =request.getParameter("name");
 				String str1=""; 
 				List<Payee> payeelist = transferService.getDesAcNo(str);
-				List<String> payeeAcc = new ArrayList<String>();
 				for(Payee payee : payeelist){
 					String account_no = Long.toString(payee.getAccount_no());
-				
+					
 					str1+=account_no+",";
 				}
-				/*for(Payee payee : payeelist){
-					String account_no1 = payee.getName();
 				
-					payeeAcc.add(account_no1+"");
-				}
-				//request.setAttribute("transfer.DestinationAcc", payeeAcc);
-				setPayeeAcc(payeeAcc);;*/
 				
-				//String messageXml =transferService.getDesAcNo(payee)
 			        System.out.println("Ajax request receive with id : [] and reply value : " + str1);
 			       
 					response.setContentType("text/html;charset=UTF-8");
@@ -127,13 +130,17 @@ public class TransferAction extends ActionSupport implements ServletRequestAware
 	}
 	
 	public String save() {
+		TransferService transferService=new TransferServiceImp();
+		transfer.setDestinationAcc(request.getParameter("des_no"));
+		Transfer reponse= transferService.save(transfer);
 		
-		
-		/*if( !=null){
+		if(reponse !=null){
 			setMessage("Transaction is success.");
 		}else{
 			setMessage("Error while transfering");
-		}*/
+		}
+		
+		execute();
 		return TRANSFER_FORM;
 	}
 
