@@ -13,9 +13,9 @@ import com.sd.training.struts2.daoimpl.PayeeDaoImpl;
 public class RoleAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private static String FWD_TO_ROLE="role";
-	private String data = "Afghanistan, Zimbabwe, India, United States, Germany, China,Australia";
-	private List<String> countries;
-	private String country;
+	private String data = "Admin,Role";
+	private List<String> countries ;
+	private String country ;
 	public String fwdtoRole(){
 		countries = new ArrayList<String>();
 		StringTokenizer st = new StringTokenizer(data, ",");
