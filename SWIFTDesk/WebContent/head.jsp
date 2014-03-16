@@ -31,7 +31,13 @@ $(document).ready(function(){
    <body>
 <h4 align="center"> Greetings from SwiftDesk</h4>
 
-
+<%
+   Object obj = session.getAttribute("userDetails");
+if(obj != null){
+	 %>
+<a href="logout.action">Logout</a>
+<%}
+%>
 <br>
 </body>
 </html>

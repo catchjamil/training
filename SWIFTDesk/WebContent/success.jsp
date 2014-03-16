@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.sd.training.struts2.bean.User"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
    <head>
@@ -75,7 +76,10 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-		<%out.println(session.getAttribute("menuMessage")); %>
+		<%
+		User user =(User)session.getAttribute("userDetails");
+		out.println(user.getMenuList()); 
+		%>
      </ul>
   </div>
 </nav>
