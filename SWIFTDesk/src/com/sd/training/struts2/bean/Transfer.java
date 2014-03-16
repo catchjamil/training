@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Contact")
+@Table(name="Transfer_info")
 public class Transfer implements Serializable {
 
 	private static final long serialVersionUID = 1L;
