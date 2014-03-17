@@ -39,10 +39,27 @@ public class RoleDaoImpl implements RoleDao{
 			Role role=(Role)object;
 			arrayList.add(role);
 		}
+		session.close();
 		return arrayList;
 		}
+	@Override
+	public List<Role> getRoles() {
 		
-}
+		Session session=HibernateUtil.openSession();
+		Query createQuery=session.createQuery("from Role");
+		List<Role> arrayList=new ArrayList<Role>();
+		List<?> list = createQuery.list();
+		for(Object object: list )
+		{
+			Role role=(Role)object;
+			arrayList.add(role);
+		}
+		session.close();
+		return arrayList;
+		}
+	}
+		
+
 
 
 
