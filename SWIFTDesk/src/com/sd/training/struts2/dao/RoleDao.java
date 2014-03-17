@@ -5,5 +5,7 @@ import java.util.List;
 import com.sd.training.struts2.bean.Role;
 
 public interface RoleDao {
-public List<Role> getRoles();
+	public List<Role> getRoles();
+	public Role setData(Role role) throws RuntimeException;
+	public List<Role> getRoleList();
 }
