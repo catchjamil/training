@@ -5,5 +5,7 @@ import java.util.List;
 import com.sd.training.struts2.bean.Role;
 
 public interface RoleService {
-public List<Role > getRoles();
+	public Role save(Role role);
+	public List<Role> getRoleList();
+	public List<Role> getRoles();
 }
