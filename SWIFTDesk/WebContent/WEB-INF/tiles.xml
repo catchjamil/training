@@ -54,6 +54,9 @@
   <definition name="AccountForm" extends="welcome">
       <put-attribute name="myBody"  value="/AccountForm.jsp"/>      
   </definition>
+   <definition name="PasswordForm" extends="welcome">
+      <put-attribute name="myBody"  value="/PasswordForm.jsp"/>      
+  </definition>
  
  
 </tiles-definitions>
