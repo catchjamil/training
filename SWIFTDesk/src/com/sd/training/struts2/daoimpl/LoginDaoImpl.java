@@ -26,12 +26,13 @@ public class LoginDaoImpl implements LoginDao {
 			  
 			 Statement createStatement = dbConnection.createStatement();
 			 ResultSet executeQuery = createStatement.executeQuery(
-			 "SELECT username, password, first_name FROM user_info where username='"+uname+"'"); 
+			 "SELECT username, password, first_name, roleID FROM user_info where username='"+uname+"'"); 
 			if(executeQuery.first()){ 
 				user = new User();
 				user.setUname(executeQuery.getString("username"));
 				user.setPassword(executeQuery.getString("password"));
 				user.setFirstName(executeQuery.getString("first_name"));
+				user.setRoleID(new Integer(executeQuery.getString("roleID")));
 			}else{
 			  System.out.println("Invalid User : "+executeQuery);
 			

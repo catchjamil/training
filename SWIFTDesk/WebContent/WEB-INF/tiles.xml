@@ -7,55 +7,53 @@
 <tiles-definitions>
 
   <definition name="welcome" template="/baseLayout.jsp">   
-      <put-attribute name="myHeader" value="/head.jsp"/>   
-      <put-attribute name="myBody"   value="/body.jsp"/>
-       <put-attribute name="mymenu"   value="/menu1.jsp"/>
-      <put-attribute name="myFooter"   value="/footer.jsp"/>
+      <put-attribute name="header" value="/head.jsp"/>   
+      <put-attribute name="body"   value="/body.jsp"/>
+      <put-attribute name="mainMenu"   value="/MainMenu.jsp"/>
+      <put-attribute name="leftSideMenu"   value="/LeftSideMenu.jsp"/>
+      <put-attribute name="footer"   value="/footer.jsp"/>
   </definition>  
- <definition name="index" extends="welcome">
-      <put-attribute name="myBody"  value="/index.jsp"/>      
+ <definition name="loginForm" extends="welcome">
+      <put-attribute name="body"  value="/LoginForm.jsp"/>      
   </definition>
  
  <definition name="UserForm" extends="welcome">
-      <put-attribute name="myBody"  value="/UserForm.jsp"/>      
+      <put-attribute name="body"  value="/UserForm.jsp"/>      
   </definition>
  
  <definition name="AddPayee" extends="welcome">
-      <put-attribute name="myBody"  value="/AddPayeeForm.jsp"/>      
+      <put-attribute name="body"  value="/AddPayeeForm.jsp"/>      
   </definition>
   
  <definition name="Transfer" extends="welcome">
-      <put-attribute name="myBody"  value="/TransferForm.jsp"/>      
+      <put-attribute name="body"  value="/TransferForm.jsp"/>      
   </definition>
   
  <definition name="Menu" extends="welcome">
-      <put-attribute name="myBody"  value="/MenuForm.jsp"/>      
+      <put-attribute name="body"  value="/MenuForm.jsp"/>      
   </definition>
   
 <definition name="BicForm" extends="welcome">
-      <put-attribute name="myBody"  value="/BicForm.jsp"/>      
+      <put-attribute name="body"  value="/BicForm.jsp"/>      
   </definition>
  
 <definition name="HelloForm" extends="welcome">
-      <put-attribute name="myBody"  value="/HelloForm.jsp"/>      
+      <put-attribute name="body"  value="/HelloForm.jsp"/>      
   </definition>
   
 <definition name="Role" extends="welcome">
-      <put-attribute name="myBody"  value="/Role.jsp"/>      
+      <put-attribute name="body"  value="/Role.jsp"/>      
   </definition>
   
 <definition name="success" extends="welcome">
-      <put-attribute name="myBody"  value="/success.jsp"/>      
+      <put-attribute name="body"  value="/home.jsp"/>      
   </definition>
   
 <definition name="error" extends="welcome">
-      <put-attribute name="myBody"  value="/error.jsp"/>      
+      <put-attribute name="body"  value="/error.jsp"/>      
   </definition>
   <definition name="AccountForm" extends="welcome">
-      <put-attribute name="myBody"  value="/AccountForm.jsp"/>      
-  </definition>
-   <definition name="PasswordForm" extends="welcome">
-      <put-attribute name="myBody"  value="/PasswordForm.jsp"/>      
+      <put-attribute name="body"  value="/AccountForm.jsp"/>      
   </definition>
  
  

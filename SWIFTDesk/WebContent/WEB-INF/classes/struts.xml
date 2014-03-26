@@ -18,13 +18,17 @@
 		</action>
         
         
+        <action name="loginForm" class="com.sd.training.struts2.action.LoginAction" method="loginForm">
+            <result name="loginForm" type="tiles">loginForm</result>
+        </action>
+        
         <action name="verify" class="com.sd.training.struts2.action.LoginAction">
             <result name="success" type="tiles">success</result>
             <result name="error" type="tiles">error</result>
         </action>
 
         <action name="logout" class="com.sd.training.struts2.action.LoginAction" method="logout">
-            <result name="success" type="tiles">index</result>
+            <result name="success" type="tiles">loginForm</result>
         </action>
         
         

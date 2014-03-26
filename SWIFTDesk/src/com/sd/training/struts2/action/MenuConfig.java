@@ -57,9 +57,17 @@ public class MenuConfig {
 						stringBuffer.append(getMainMenu(menu1.getHref(),	menu1.getName()));
 					}
 				}
+				stringBuffer.append("</ul>");
 			} else {
-				stringBuffer.append(getMainMenu(menu.getHref(),
-						menu.getName()));
+				boolean isChild = true;
+				for (Menu menu5 : menuList) {
+					if (menu5.getId().equals(menu.getParentId()) ) {
+						isChild = false;
+						break;
+					}
+				}
+				if(isChild)
+					stringBuffer.append(getMainMenu(menu.getHref(),menu.getName()));
 			}
 
 		}

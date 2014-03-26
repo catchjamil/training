@@ -1,9 +1,15 @@
+
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
+
+<%@page import="com.sd.training.struts2.bean.User"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
    <html>
    <head>
-      <title>Bootstrap</title>
+      <title>SWIFTDesk</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Bootstrap -->
       <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,26 +24,56 @@
  
    </head>
    
-  
-
 <body>
 
 
-<div id="header">
-	<tiles:insertAttribute name="myHeader" />
+<div class="span9">
+	<tiles:insertAttribute name="header" />
+	
+	
+	
+	
+<%
+   User obj = (User)session.getAttribute("userDetails");
+if(obj != null){
+	 %>
+	
+	<div class="span9">
+		<tiles:insertAttribute name="mainMenu" />
+	</div>
+<%}
+%>
 </div>
-<div id="wrap">
-	<div id="content">
-		<tiles:insertAttribute name="myBody" />
+<% 	if(obj != null){
+	 %>
+	<div style="width:100px">
+		<tiles:insertAttribute name="leftSideMenu" />
 	</div>
-	<div id="sidebar">
-		<tiles:insertAttribute name="mymenu" />
+<%}
+%>
+	
+	
+	<div style="width:500px">
+		<tiles:insertAttribute name="body" />
 	</div>
-	<div id="footer">
-		<tiles:insertAttribute name="myFooter" />
+
+
+	<div class="span9">
+		<tiles:insertAttribute name="footer" />
 	</div>
+	
+	
+	<div class="row">
+  <div class="span9">
+    Level 1 column
+    <div class="row">
+      <div class="span6">Level 2</div>
+      <div class="span3">Level 2</div>
+    </div>
+  </div>
 </div>
-     
+	
+	
 	</body>
  </html>
 

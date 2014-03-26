@@ -24,12 +24,5 @@ public class MenuServiceImpl implements MenuService {
 		return menu;
 	}
 
-	@Override
-	public List<Menu> getMenuList() {
-		MenuDao menuDao=new MenuDaoImpl();
-		List<Menu> menu=menuDao.getMenuList();
-		return menu;
-	}
-
-	
+		
 }

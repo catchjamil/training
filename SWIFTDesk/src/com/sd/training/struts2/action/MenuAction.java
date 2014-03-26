@@ -42,13 +42,14 @@ public class MenuAction extends ActionSupport {
 		
 		public String fwdToMenu(){
 			MenuService menuService=new MenuServiceImpl();
-			List<Menu> list1=menuService.getMenuList();
-			setMenulist(list1);
+			/*List<Menu> list1=menuService.getMenuList();
+			setMenulist(list1);*/
 			return FWD_TO_MENU;
 		}
 		
 		public String save(){
 			MenuService menuService=new MenuServiceImpl();
+			menu.setParentId(menu.getParentId() < 1? null: menu.getParentId());
 			Menu response=menuService.save(menu);
 			if(response!=null){
 				setMessage("Link added sucessfully");

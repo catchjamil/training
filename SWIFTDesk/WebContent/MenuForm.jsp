@@ -17,7 +17,7 @@
 <br>
 <s:textfield  name="menu.name" label="Menu Name"/>
 <s:textfield  name="menu.href" label="Link "/>
-<s:select name="menu.parentId" key="personBean.residency" list="menulist" listKey="menuId"
+<s:select name="menu.parentId" list="menulist" listKey="id"
 		  headerKey="-1" headerValue="Select Parent Menu" 
 		  listValue="name"  label="Parent ID"/>
 <s:submit/>

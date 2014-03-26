@@ -17,10 +17,24 @@ CREATE TABLE user_info(
    PRIMARY KEY (id )
 );
  
-INSERT INTO user_info(username,password, email,first_name,last_name,created_date) VALUES ("user1","pass1","user1@sd.com","first name","last name", NOW());
-INSERT INTO user_info(username,password, email,first_name,last_name,created_date) VALUES ("user2","pass2","user2@sd.com","first name","last name", NOW());
-INSERT INTO user_info(username,password, email,first_name,last_name,created_date) VALUES ("user3","pass3","user3@sd.com","first name","last name", NOW());
-INSERT INTO user_info(username,password, email,first_name,last_name,created_date) VALUES ("user4","pass4","user4@sd.com","first name","last name", NOW());
+INSERT INTO `swiftdb`.`role_menu` (`Role_Id`, `menu_Id`) VALUES ('1', '1');
+INSERT INTO `swiftdb`.`role_menu` (`Role_Id`, `menu_Id`) VALUES ('1', '2');
+INSERT INTO `swiftdb`.`role_menu` (`Role_Id`, `menu_Id`) VALUES ('1', '3');
+INSERT INTO `swiftdb`.`role_menu` (`Role_Id`, `menu_Id`) VALUES ('1', '4');
+INSERT INTO `swiftdb`.`role_menu` (`Role_Id`, `menu_Id`) VALUES ('1', '5');
+INSERT INTO `swiftdb`.`role_menu` (`Role_Id`, `menu_Id`) VALUES ('1', '6');
+INSERT INTO `swiftdb`.`role_menu` (`Role_Id`, `menu_Id`) VALUES ('1', '7');
+
+commit;
+
+INSERT INTO `menu` (`Id`,`href`,`name`,`parentId`) VALUES (1,'contact','Contact',NULL);
+INSERT INTO `menu` (`Id`,`href`,`name`,`parentId`) VALUES (2,'#','Admin',NULL);
+INSERT INTO `menu` (`Id`,`href`,`name`,`parentId`) VALUES (3,'fwdToMenu.action','Create Menu',2);
+INSERT INTO `menu` (`Id`,`href`,`name`,`parentId`) VALUES (4,'#','Transaction',NULL);
+INSERT INTO `menu` (`Id`,`href`,`name`,`parentId`) VALUES (5,'fwdToTransfer.action','Fund Transfer',4);
+INSERT INTO `menu` (`Id`,`href`,`name`,`parentId`) VALUES (6,'fwdToAddPayee.action','Add Payee',4);
+INSERT INTO `menu` (`Id`,`href`,`name`,`parentId`) VALUES (7,'fwdToUserRegistration.action','User Registration',2);
+
 commit;
 
 -------------End----------------

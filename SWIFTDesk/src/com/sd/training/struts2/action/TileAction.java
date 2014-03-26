@@ -13,5 +13,10 @@ public class TileAction extends ActionSupport {
 	{
 		return "welcome";
 	}
+	
+	public String loginForm()
+	{
+		return "loginForm";
+	}
 
 }

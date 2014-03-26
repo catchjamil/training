@@ -17,6 +17,7 @@ public class LoginServiceImpl implements LoginService {
 		if (userByName != null){
 			String Encrytpass=Encryt.getHash(user.getPassword());
 				if(Encrytpass.equals(userByName.getPassword())) {
+					user.setRoleID(userByName.getRoleID());
 					user.setPassword(null);
 					return true;
 				}	

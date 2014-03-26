@@ -58,7 +58,12 @@ public String logout(){
 	getSession2().invalidate();
 	return SUCCESS;
 }
+
+
+public String loginForm(){
 	
+	return "loginForm";
+}
 
 private HttpSession session2;
 public HttpSession getSession2() {
