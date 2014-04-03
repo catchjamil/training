@@ -152,6 +152,7 @@ function validateForm()
 </s:div>
 
 </s:form>
+<a href="listUserForm.action">List All Users</a>
 </div>
 </body>
 </html>
