@@ -14,9 +14,7 @@
 		
 		<action name="WelcomeLink"  class="com.sd.training.struts2.action.TileAction" method="Welcome">
 			<result name="welcome" type="tiles">index</result>
-			
 		</action>
-        
         
         <action name="loginForm" class="com.sd.training.struts2.action.LoginAction" method="loginForm">
             <result name="loginForm" type="tiles">loginForm</result>
@@ -36,6 +34,11 @@
             <result name="fwdToUserRegistration" type="tiles">UserForm</result>
         </action>
         
+         
+         <action name="fwdToChangePass" class="com.sd.training.struts2.action.PasswordAction" method="fwdToResetPass">
+            <result name="passwordform" type="tiles">PasswordForm</result>
+        </action>
+        
          <action name="fwdToAddPayee" class="com.sd.training.struts2.action.PayeeAction" method="fwdToAddPayee">
             <result name="fwdToAddPayee" type="tiles">AddPayee</result>
         </action>
@@ -50,17 +53,21 @@
        
         
         <action name="userForm" class="com.sd.training.struts2.action.UserAction" method="save">
-            <result name="userForm" type="tiles">UserForm</result>
-            
+            <result name="userForm" type="tiles">UserForm</result>   
         </action>
+        
+         <action name="listUserForm" class="com.sd.training.struts2.action.UserAction" method="getAllUser">
+            <result name="listuserForm">/ListUserForm.jsp</result>
+        </action>
+        
          <action name="bicForm" class="com.sd.training.struts2.action.BicAction" method="save">
             <result name="bicForm" type="tiles">BicForm</result>
             
         </action>
         <action name="addPayee" class="com.sd.training.struts2.action.PayeeAction" method="save">
             <result name="addPayee" type="tiles">AddPayee</result>
-            
         </action>
+        
          <action name="transfer" class="com.sd.training.struts2.action.TransferAction" method="save">
             <result name="transfer" type="tiles">Transfer</result>
         </action>
@@ -79,11 +86,14 @@
         <action name="role" class="com.sd.training.struts2.action.RoleAction" method="fwdtoRole">
             <result name="role" type="tiles">Role</result>
         </action>
+        
          <action name="menuForm" class="com.sd.training.struts2.action.MenuAction" method="save">
             <result name="menuForm" type="tiles">Menu</result>
         </action>
         
-        
+        <action name="passReset" class="com.sd.training.struts2.action.PasswordAction" method="save">
+            <result name="passwordform" type="tiles">PasswordForm</result>
+        </action>
         
     </package>
 </struts>
