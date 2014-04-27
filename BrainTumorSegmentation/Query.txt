@@ -1,5 +1,0 @@
-Create table patientRegistery(patientid number  primary key, name varchar2(25),age number,address varchar2(30),contactnumber number,gender varchar2(10),admitteddate varchar2(25),doctorname varchar2(25),lastscandate varchar2(25),bloodgroup varchar2(5), filename varchar2(25),fileData blob NOT NULL,filedescription varchar2(200) ,filedate date)
-/
-
-
-create table brainResult(patientid number primary key,result varchar2(5))
