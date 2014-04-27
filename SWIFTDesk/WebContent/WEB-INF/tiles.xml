@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="welcome" template="/baseLayout.jsp">   
+      <put-attribute name="header" value="/head.jsp"/>   
+      <put-attribute name="body"   value="/body.jsp"/>
+      <put-attribute name="mainMenu"   value="/MainMenu.jsp"/>
+      <put-attribute name="leftSideMenu"   value="/LeftSideMenu.jsp"/>
+      <put-attribute name="footer"   value="/footer.jsp"/>
+  </definition>  
+ <definition name="loginForm" extends="welcome">
+      <put-attribute name="body"  value="/LoginForm.jsp"/>      
+  </definition>
+ 
+ <definition name="UserForm" extends="welcome">
+      <put-attribute name="body"  value="/UserForm.jsp"/>      
+  </definition>
+ 
+ <definition name="AddPayee" extends="welcome">
+      <put-attribute name="body"  value="/AddPayeeForm.jsp"/>      
+  </definition>
+  
+ <definition name="Transfer" extends="welcome">
+      <put-attribute name="body"  value="/TransferForm.jsp"/>      
+  </definition>
+  
+ <definition name="Menu" extends="welcome">
+      <put-attribute name="body"  value="/MenuForm.jsp"/>      
+  </definition>
+  
+<definition name="BicForm" extends="welcome">
+      <put-attribute name="body"  value="/BicForm.jsp"/>      
+  </definition>
+ 
+<definition name="HelloForm" extends="welcome">
+      <put-attribute name="body"  value="/HelloForm.jsp"/>      
+  </definition>
+  
+<definition name="Role" extends="welcome">
+      <put-attribute name="body"  value="/Role.jsp"/>      
+  </definition>
+  
+<definition name="success" extends="welcome">
+      <put-attribute name="body"  value="/home.jsp"/>      
+  </definition>
+  
+<definition name="error" extends="welcome">
+      <put-attribute name="body"  value="/error.jsp"/>      
+  </definition>
+  <definition name="AccountForm" extends="welcome">
+      <put-attribute name="body"  value="/AccountForm.jsp"/>      
+  </definition>
+ 
+ 
+</tiles-definitions>
