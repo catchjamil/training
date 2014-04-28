@@ -1,4 +1,6 @@
-
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE script PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <script type="text/javascript">
 
 //-------------------------------------------------------------//
@@ -111,47 +113,39 @@ function validateForm()
 </script>
 </head>
 <body >
-<div class="control-label col-xs-10">
-<h1>User Creation</h1>
+
+<h3>User Creation</h3>
 <b><s:property value="message" /></b>
- <s:form action="userForm" onsubmit="return validateForm()" cssClass="form-horizontal">
-<div class="form-group">
+ <s:form action="userForm" onsubmit="return validateForm()">
+
 <s:textfield size="30" name="user.uname"
-			label="Enter Username" onblur="validuname()" />
+			label="Enter Username" onblur="validuname()"/>
 <s:label id="un" cssStyle="color: red;">&nbsp;</s:label>
-</div>
-<div class="form-group">
 <s:password size="30" name="user.password"
 			label="Enter Password" onblur="validpass()" />
 <s:label id="pa" cssStyle="color: red;">&nbsp;</s:label>
-</div>
-<div class="form-group">
 <s:password size="30" name="user.passwordc"
-	label="Confirm Password" onblur="validpassc()" cssClass=""/>
+	label="Confirm Password" onblur="validpassc()"/>
 <s:label id="pac" cssStyle="color: red;">&nbsp;</s:label>
-</div>
-<div class="form-group">
 <s:textfield size="30" name="user.firstName"
 	label="First Name" onblur="validfname()" />
 <s:label id="fn" cssStyle="color: red;">&nbsp;</s:label>
-</div>
-<div class="form-group">
 <s:textfield size="30" name="user.lastName"
 	label="Last Name" onblur="validlname()" />
 <s:label id="ln" cssStyle="color: red;">&nbsp;</s:label>
-</div>
-<div class="form-group">
+
 <s:textfield size="30" name="user.email" label="E-mail"
 	onblur="validemail()" />
 <s:label id="em" cssStyle="color: red;">&nbsp;</s:label>
-</div>
 <s:select list="roles" label="User type" name="user.roleID" headerValue="select" headerKey="-1" listKey="id" listValue="roleName"/>
-	<s:div cssClass="form-group">
- <s:submit cssClass="btn btn-primary"/>
- <s:reset cssClass="btn btn-danger"/>
-</s:div>
+	
+ <tr><td> &nbsp; </td>	<td>&nbsp;</td></tr>
+		<tr><td> 
+		 </td>
+ 		<td><s:submit theme="simple"/><s:reset theme="simple"/></td></tr>
+
 
 </s:form>
-</div>
+
 </body>
 </html>
