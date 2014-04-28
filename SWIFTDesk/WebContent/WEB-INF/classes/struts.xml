@@ -19,6 +19,9 @@
         <action name="loginForm" class="com.sd.training.struts2.action.LoginAction" method="loginForm">
             <result name="loginForm" type="tiles">loginForm</result>
         </action>
+        <action name="fwdToContact" class="com.sd.training.struts2.action.UserAction" method="fwdToContact">
+            <result name="fwdToContact" type="tiles">contact</result>
+        </action>
         
         <action name="verify" class="com.sd.training.struts2.action.LoginAction">
             <result name="success" type="tiles">success</result>
@@ -42,8 +45,6 @@
          <action name="fwdToAddPayee" class="com.sd.training.struts2.action.PayeeAction" method="fwdToAddPayee">
             <result name="fwdToAddPayee" type="tiles">AddPayee</result>
         </action>
-        
-         
          <action name="fwdToTransfer" class="com.sd.training.struts2.action.TransferAction" >
             <result name="fwdToTransfer" type="tiles">Transfer</result>
         </action>
@@ -51,7 +52,9 @@
             <result name="fwdToMenu" type="tiles">Menu</result>
         </action>
        
-        
+         <action name="menuForm" class="com.sd.training.struts2.action.MenuAction" method="save">
+            <result name="fwdToMenu" type="tiles">Menu</result>
+        </action>
         <action name="userForm" class="com.sd.training.struts2.action.UserAction" method="save">
             <result name="userForm" type="tiles">UserForm</result>   
         </action>
@@ -87,9 +90,7 @@
             <result name="role" type="tiles">Role</result>
         </action>
         
-         <action name="menuForm" class="com.sd.training.struts2.action.MenuAction" method="save">
-            <result name="menuForm" type="tiles">Menu</result>
-        </action>
+        
         
         <action name="passReset" class="com.sd.training.struts2.action.PasswordAction" method="save">
             <result name="passwordform" type="tiles">PasswordForm</result>
