@@ -16,6 +16,9 @@
  <definition name="loginForm" extends="welcome">
       <put-attribute name="body"  value="/LoginForm.jsp"/>      
   </definition>
+  <definition name="contact" extends="welcome">
+      <put-attribute name="body"  value="/Contact.jsp"/>      
+  </definition>
  
  <definition name="UserForm" extends="welcome">
       <put-attribute name="body"  value="/UserForm.jsp"/>      
