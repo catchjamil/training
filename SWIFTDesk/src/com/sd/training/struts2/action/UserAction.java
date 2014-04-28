@@ -50,7 +50,10 @@ public class UserAction extends ActionSupport {
 		return FWD_TO_USERREGISTRATION;
 	}
 	
-	
+	public String fwdToContact(){
+		return "fwdToContact";
+		
+	}
 
 	public String save() {
 		UserService userServiceImpl = new UserServiceImpl();

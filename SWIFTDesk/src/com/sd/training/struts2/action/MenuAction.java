@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.sd.training.struts2.bean.Menu;
+import com.sd.training.struts2.bean.Role;
 import com.sd.training.struts2.service.MenuService;
 import com.sd.training.struts2.serviceImpl.MenuServiceImpl;
 
@@ -12,6 +13,15 @@ public class MenuAction extends ActionSupport {
 		private static final long serialVersionUID = 1L;
 		private Menu menu;
 		List<Menu> menulist;
+		List<Role> rolelist;
+		public List<Role> getRolelist() {
+			return rolelist;
+		}
+
+		public void setRolelist(List<Role> rolelist) {
+			this.rolelist = rolelist;
+		}
+
 		public List<Menu> getMenulist() {
 			return menulist;
 		}
@@ -38,12 +48,11 @@ public class MenuAction extends ActionSupport {
 		}
 
 		private static String FWD_TO_MENU="fwdToMenu";
-		private static String MENU_FORM="menuForm";
 		
 		public String fwdToMenu(){
 			MenuService menuService=new MenuServiceImpl();
-			/*List<Menu> list1=menuService.getMenuList();
-			setMenulist(list1);*/
+			List<Menu> list1=menuService.getMenuList();
+			setMenulist(list1);
 			return FWD_TO_MENU;
 		}
 		
@@ -57,6 +66,15 @@ public class MenuAction extends ActionSupport {
 				setMessage("error in saving data");
 			}
 			
-			return MENU_FORM;
+			return fwdToMenu();
+		}
+		
+		public String fwdToRoleMenu(){
+			MenuService menuService=new MenuServiceImpl();
+			List<Menu> list1=menuService.getMenuList();
+			List<Role> list2=menuService.getRoleList();
+			setMenulist(list1);
+			setRolelist(list2);
+		return 	"fwdToRoleMenu";
 		}
 }
