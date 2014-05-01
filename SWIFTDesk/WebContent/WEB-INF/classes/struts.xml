@@ -22,6 +22,12 @@
         <action name="fwdToContact" class="com.sd.training.struts2.action.UserAction" method="fwdToContact">
             <result name="fwdToContact" type="tiles">contact</result>
         </action>
+         <action name="fwdToRoleMenu" class="com.sd.training.struts2.action.MenuAction" method="fwdToRoleMenu">
+            <result name="fwdToRoleMenu" type="tiles">RoleMenu</result>
+        </action>
+        <action name="roleMenu" class="com.sd.training.struts2.action.MenuAction" method="fwdToRoleMenuList">
+            <result name="fwdToRoleMenu" type="tiles">RoleMenu</result>
+        </action>
         
         <action name="verify" class="com.sd.training.struts2.action.LoginAction">
             <result name="success" type="tiles">success</result>
@@ -35,6 +41,9 @@
         
          <action name="fwdToUserRegistration" class="com.sd.training.struts2.action.UserAction" method="fwdToUserRegistration">
             <result name="fwdToUserRegistration" type="tiles">UserForm</result>
+        </action>
+         <action name="fwdToAccountOpenForm" class="com.sd.training.struts2.action.AccountAction" method="fwdToAccountOpenForm">
+            <result name="fwdToAccountOpenForm" type="tiles">AccountOpenForm</result>
         </action>
         
          
@@ -62,10 +71,14 @@
          <action name="listUserForm" class="com.sd.training.struts2.action.UserAction" method="getAllUser">
             <result name="listuserForm">/ListUserForm.jsp</result>
         </action>
-        
+         <action name="fwdToBicSearch" class="com.sd.training.struts2.action.BicAction"  method="fwdToBicSearch">
+            <result name="fwdToBicSearch" type="tiles">BicSearch</result>
+        </action>
+         <action name="fwdToBicForm" class="com.sd.training.struts2.action.BicAction"  method="fwdToBicForm">
+            <result name="fwdToBicForm" type="tiles">BicForm</result>
+        </action>
          <action name="bicForm" class="com.sd.training.struts2.action.BicAction" method="save">
             <result name="bicForm" type="tiles">BicForm</result>
-            
         </action>
         <action name="addPayee" class="com.sd.training.struts2.action.PayeeAction" method="save">
             <result name="addPayee" type="tiles">AddPayee</result>
