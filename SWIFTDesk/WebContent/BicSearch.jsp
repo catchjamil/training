@@ -6,9 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Bic Search</title>
 </head>
 <body>
+<h3>BIC Search</h3>
 <s:form action="bicSearch">
 
 

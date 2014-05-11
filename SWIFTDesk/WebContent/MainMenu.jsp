@@ -64,7 +64,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="fwdToHome.action">Home</a></li>
 		<%
 		User user =(User)session.getAttribute("userDetails");
 		out.println(user.getMenuList()); 

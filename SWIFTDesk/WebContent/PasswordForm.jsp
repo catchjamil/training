@@ -1,14 +1,14 @@
  <%@page import="com.sd.training.struts2.bean.User"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<sb:head/>
+<title>Change Password</title>
+
 <script type="text/javascript">
 
 
@@ -77,19 +77,23 @@ function validateForm()
 </script>
 </head>
 <body>
-<h1>password example</h1>
+<h3>Reset Password</h3>
  <%
     User user=(User)session.getAttribute("userDetails");		
 		%>
 <s:form action="passReset" onsubmit="return validateForm()">
 <s:property value="message"/>
-    <s:label label="UserId" ><%=user.getUname()%></s:label>
+<tr><td>
+    <s:label value="UserId" theme="simple" /></td>
+    <td><%=user.getUname()%></td></tr>
 	<s:password label="Enter OldPassword" name="pass.oldpass" id="oldp" onblur="validoldpass()" />
 	<s:password label="Enter NewPassword" name="pass.newpass" id="newp" onblur="validpass()"/>
 	<s:password label="confirm NewPassword" name="pass.newpassc" id="cp" onblur="validpassc()"/>
  
-	<s:submit  value="submit" />
-    <s:reset  value="Reset" />
+	<tr><td>&nbsp;</td></tr>
+<tr><td></td>
+<td><s:submit theme="simple"/>
+<s:reset theme="simple"/></td></tr>
 </s:form>
 
 </body>

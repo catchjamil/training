@@ -100,32 +100,23 @@ function validbc()
 </script>
 </head>
 <body >
-<h2 align="center">BIC CODE INSERT FORM</h2><hr>
+<h3>BIC CODE INSERT FORM</h3><hr>
 <s:form action="bicForm" onsubmit="return validateForm()">
-<table border="2" bordercolor="black">
-<tr><td colspan="2"><b>&nbsp;<s:property value="message" /></b>
-
+<s:property value="message" />
 <s:textfield maxlength="4" name="bic.bankcode" label="Bank Code" onblur="validbc()"/>
-<tr>
-<td><td><label id=ibc style="color: red">&nbsp;</label>
+<s:label id="ibc" cssStyle="color: red">&nbsp;</s:label>
 
 <s:textfield maxlength="2"   name="bic.countrycode" label="Country Code" onblur="validcc()"/>
-<tr>
-<td><td><label id=icc style="color: red">&nbsp;</label>
+<s:label id="icc" cssStyle="color: red">&nbsp;</s:label>
 
 <s:textfield  maxlength="2" name="bic.locationcode" label="Location Code" onblur="validlc()"/>
-<tr>
-<td><td><label id=ilc style="color: red">&nbsp;</label>
-
+<s:label id="ilc" cssStyle="color: red">&nbsp;</s:label>
 <s:textfield maxlength="3" name="bic.branchcode" label="Branch Code" onblur="validbrc()"/>
-<tr>
-<td><td><label id=ibrc style="color: red">&nbsp;</label>
-<s:submit value="Submit" />
-<s:reset value="Clear"/>
-
-</table>
-
+<s:label id="ibrc" cssStyle="color: red">&nbsp;</s:label>
+<tr><td> &nbsp; </td>	
+<td>&nbsp;</td></tr>
+<tr><td> </td>
+ <td><s:submit theme="simple"/><s:reset theme="simple"/></td></tr>
 </s:form>
-
 </body>
 </html>

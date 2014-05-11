@@ -4,7 +4,8 @@
 <script type="text/javascript">
 
 //-------------------------------------------------------------//
-function validuname()
+var xmlHttp;
+function validuname(url)
 {
 var uname=document.forms["userForm"]["user.uname"].value;
 if (uname==null || uname=="")
@@ -14,7 +15,58 @@ if (uname==null || uname=="")
 	  	return false;
   }
 else{
-	document.getElementById("un").innerHTML="&nbsp;";
+try {
+    xmlHttp = new XMLHttpRequest();
+} catch (e) {
+    try {
+        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+        try {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e) {
+            alert("Your browser does not support AJAX..!");
+            return false;
+        }
+    }
+}
+xmlHttp.open("POST", url, true);
+xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded;charset=UTF-8");
+xmlHttp.send("name="+uname);
+xmlHttp.onreadystatechange = showMessage;
+}
+
+function showMessage() {
+	   if (xmlHttp.readyState == 4) {	
+		   var str=xmlHttp.responseText;
+		   if(str=="yes"){
+			   document.getElementById("un").innerHTML="user exist";
+				return false;
+		   }else{
+				document.getElementById("un").innerHTML="";
+				return true;
+			}
+}
+}
+
+}
+//-------------------------------------------------//
+function validaccno()
+{
+var acc=document.forms["userForm"]["user.accountnumber"].value;
+if (acc==null || acc=="")
+  {
+	  	
+	document.getElementById("acc").innerHTML="Account no must be filled out";
+	  	return false;
+  }
+else if (acc.length>=9 && acc.length<=15)
+  {
+	  	
+	document.getElementById("acc").innerHTML="Accoun no in b/w 9-15 digit long";
+	  	return false;
+  }
+{
+	document.getElementById("acc").innerHTML="&nbsp;";
 		return true;
 	}
 }
@@ -107,6 +159,8 @@ function validateForm()
 		return false;
 	else if(!validemail())
 		return false;
+	else if(!validaccno())
+		return false;
 	else
 	return true;	
 }
@@ -119,7 +173,8 @@ function validateForm()
  <s:form action="userForm" onsubmit="return validateForm()">
 
 <s:textfield size="30" name="user.uname"
-			label="Enter Username" onblur="validuname()"/>
+			label="Enter Username" onblur="validuname('validuname.action')"/>
+			
 <s:label id="un" cssStyle="color: red;">&nbsp;</s:label>
 <s:password size="30" name="user.password"
 			label="Enter Password" onblur="validpass()" />
@@ -133,7 +188,9 @@ function validateForm()
 <s:textfield size="30" name="user.lastName"
 	label="Last Name" onblur="validlname()" />
 <s:label id="ln" cssStyle="color: red;">&nbsp;</s:label>
-
+<s:textfield size="30" name="user.accountnumber"
+			label="Enter Account No" onblur="validacc_no()"/>
+<s:label id="acc" cssStyle="color: red;">&nbsp;</s:label>			
 <s:textfield size="30" name="user.email" label="E-mail"
 	onblur="validemail()" />
 <s:label id="em" cssStyle="color: red;">&nbsp;</s:label>
