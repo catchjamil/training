@@ -19,9 +19,5 @@
 	</s:form>
 	
 	
-	<br>
-	<a href="fwdToUserRegistration.action">User Registration</a>
-	<a href="hello.action">Say Hello</a>
-	<br>
-	<a href="role.action">ROLE SEARCH FORM</a>
+	
 </div>	
