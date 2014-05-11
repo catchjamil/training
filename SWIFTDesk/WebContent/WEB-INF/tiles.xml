@@ -17,13 +17,18 @@
       <put-attribute name="body"  value="/LoginForm.jsp"/>      
   </definition>
   <definition name="contact" extends="welcome">
-      <put-attribute name="body"  value="/Contact.jsp"/>      
+      <put-attribute name="body"  value="/Contact.jsp"></put-attribute>      
+  </definition>
+  <definition name="RoleMenu" extends="welcome">
+      <put-attribute name="body"  value="/RoleMenuForm.jsp"></put-attribute>      
   </definition>
  
  <definition name="UserForm" extends="welcome">
       <put-attribute name="body"  value="/UserForm.jsp"/>      
   </definition>
- 
+ <definition name="AccountOpenForm" extends="welcome">
+      <put-attribute name="body"  value="/AccountOpenForm.jsp"/>      
+  </definition>
  <definition name="AddPayee" extends="welcome">
       <put-attribute name="body"  value="/AddPayeeForm.jsp"/>      
   </definition>
@@ -39,11 +44,16 @@
 <definition name="BicForm" extends="welcome">
       <put-attribute name="body"  value="/BicForm.jsp"/>      
   </definition>
+  <definition name="BicSearch" extends="welcome">
+      <put-attribute name="body"  value="/BicSearch.jsp"/>      
+  </definition>
  
 <definition name="HelloForm" extends="welcome">
       <put-attribute name="body"  value="/HelloForm.jsp"/>      
   </definition>
-  
+<definition name="Help" extends="welcome">
+      <put-attribute name="body"  value="/Help.jsp"/>      
+  </definition>  
 <definition name="Role" extends="welcome">
       <put-attribute name="body"  value="/Role.jsp"/>      
   </definition>
@@ -55,9 +65,14 @@
 <definition name="error" extends="welcome">
       <put-attribute name="body"  value="/error.jsp"/>      
   </definition>
-  <definition name="AccountForm" extends="welcome">
-      <put-attribute name="body"  value="/AccountForm.jsp"/>      
+  <definition name="Home" extends="welcome">
+      <put-attribute name="body"  value="/home.jsp"/>      
   </definition>
- 
+   <definition name="Password" extends="welcome">
+      <put-attribute name="body"  value="/PasswordForm.jsp"/>      
+  </definition>
+ <definition name="viewAccountOpenView" extends="welcome">
+      <put-attribute name="body"  value="/AccountOpenView.jsp"/>      
+  </definition>
  
 </tiles-definitions>
