@@ -4,5 +4,5 @@ import com.sd.training.struts2.bean.User;
 
 public interface LoginService {
 
-	public boolean authenticateUser(User user);
+	public User authenticateUser(User user);
 }

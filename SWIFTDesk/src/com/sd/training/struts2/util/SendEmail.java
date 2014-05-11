@@ -25,8 +25,8 @@ import javax.mail.internet.MimeMultipart;
 		  
 	    private static final String SMTP_HOST_NAME = "smtp.gmail.com";  
 	    private static final String SMTP_PORT = "465";  
-	    private static final String emailFromAddress = "javaworkspace@gmail.com"; 
-	    private static final String emailPassword = "password"; 
+	    private static final String emailFromAddress = "swiftdesksolution@gmail.com"; 
+	    private static final String emailPassword = "go123456"; 
 	    private static final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";  
 	    private String[] attachmentsPath;
 	    private String[] attachmentsName;

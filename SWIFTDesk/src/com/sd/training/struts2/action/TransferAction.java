@@ -48,10 +48,10 @@ public class TransferAction extends ActionSupport implements ServletRequestAware
 
 	public String execute() {
 		
-		
+		User user1= (User)getSession().getAttribute("userDetails");
 		TransferService transferService=new TransferServiceImp();	
 		List<Payee> payeelist = transferService.getPayeeList();
-		List<User> accountList = transferService.getAccountList("usernane");
+		List<User> accountList = transferService.getAccountList(user1.getUname());
 		List<String> accounts1 = new ArrayList<String>();
 		for(Payee payee : payeelist){
 			String account_no = payee.getName();
@@ -61,7 +61,7 @@ public class TransferAction extends ActionSupport implements ServletRequestAware
 		setPayees(accounts1);
 		List<String> accounts2 = new ArrayList<String>();
 		for(User user :accountList){
-			String account_no = Integer.toString(user.getId());
+			String account_no = Long.toString(user.getAccountNo());
 			accounts2.add(account_no+"");
 		}
 	
@@ -147,9 +147,19 @@ public class TransferAction extends ActionSupport implements ServletRequestAware
 		execute();
 		return TRANSFER_FORM;
 	}
+	private HttpSession session;
+
+	 public HttpSession getSession() {
+		return session;
+	}
 
 
-	 @Override
+	public void setSession(HttpSession session) {
+		this.session = session;
+	}
+
+
+	@Override
 	    public void setServletResponse(HttpServletResponse httpServletResponse) {
 	        this.response = httpServletResponse;
 	    }

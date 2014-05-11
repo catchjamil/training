@@ -31,6 +31,7 @@ public class PasswordAction  extends ActionSupport implements ServletRequestAwar
 	private Password pass;
 	private String message;
 	private HttpSession session;
+	HttpServletRequest request;
 	
 	public HttpSession getSession() {
 		return session;
@@ -60,8 +61,9 @@ public class PasswordAction  extends ActionSupport implements ServletRequestAwar
 		user.setUname(user1.getUname());
 		user.setPassword(pass.getOldpass());
 		LoginService loginServiceImpl = new LoginServiceImpl();
+		User authenticateUser = loginServiceImpl.authenticateUser(user);
 		
-		if (loginServiceImpl.authenticateUser(user)){
+		if (null != authenticateUser){
 			PasswordService passwordService=new PasswordServiceImp();
 			user.setPassword(pass.getNewpass());
 			user= passwordService.save(user);
@@ -78,6 +80,7 @@ public class PasswordAction  extends ActionSupport implements ServletRequestAwar
 	@Override
 	public void setServletRequest(HttpServletRequest arg0) {
 		
+		setSession(arg0.getSession());
 		
 	}
 	

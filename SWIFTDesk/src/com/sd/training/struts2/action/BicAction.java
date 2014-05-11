@@ -27,6 +27,12 @@ public class BicAction extends ActionSupport {
 		public void setMessage(String message) {
 			this.message = message;
 		}
+		public String fwdToBicForm() {
+			return "fwdToBicForm";
+		}
+		public String fwdToBicSearch() {
+			return "fwdToBicSearch";
+		}
 		
 		public String save() {
 			BicService bicService=new BicServiceImpl();

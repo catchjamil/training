@@ -17,7 +17,9 @@
 		<mapping class="com.sd.training.struts2.bean.Role" />
 		<mapping class="com.sd.training.struts2.bean.Contact" />
 		<mapping class="com.sd.training.struts2.bean.Payee" />
-		<mapping class="com.sd.training.struts2.bean.Bic" />
+		<mapping class="com.sd.training.struts2.bean.Bic" /> 
 		<mapping class="com.sd.training.struts2.bean.Transfer" />
+		<mapping class="com.sd.training.struts2.bean.Account" />
+		<mapping class="com.sd.training.struts2.bean.Account_number" />
 	</session-factory>
 </hibernate-configuration>

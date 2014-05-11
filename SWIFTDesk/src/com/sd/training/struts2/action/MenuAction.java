@@ -13,7 +13,16 @@ public class MenuAction extends ActionSupport {
 		private static final long serialVersionUID = 1L;
 		private Menu menu;
 		List<Menu> menulist;
+		List<Menu> rolemenulist;
 		List<Role> rolelist;
+		public List<Menu> getRolemenulist() {
+			return rolemenulist;
+		}
+
+		public void setRolemenulist(List<Menu> rolemenulist) {
+			this.rolemenulist = rolemenulist;
+		}
+
 		public List<Role> getRolelist() {
 			return rolelist;
 		}
@@ -55,6 +64,7 @@ public class MenuAction extends ActionSupport {
 			setMenulist(list1);
 			return FWD_TO_MENU;
 		}
+
 		
 		public String save(){
 			MenuService menuService=new MenuServiceImpl();
@@ -71,10 +81,26 @@ public class MenuAction extends ActionSupport {
 		
 		public String fwdToRoleMenu(){
 			MenuService menuService=new MenuServiceImpl();
-			List<Menu> list1=menuService.getMenuList();
 			List<Role> list2=menuService.getRoleList();
-			setMenulist(list1);
 			setRolelist(list2);
 		return 	"fwdToRoleMenu";
+		}
+		Role role;
+		
+		public Role getRole() {
+			return role;
+		}
+
+		public void setRole(Role role) {
+			this.role = role;
+		}
+
+		public String fwdToRoleMenuList(){
+			long id=role.getId();
+			MenuService menuService=new MenuServiceImpl();
+			menuService.getCurrentMenu(id);
+			//List<Menu> list1=menuService.getMenuList();
+			//setMenulist(list1);
+			return fwdToRoleMenu();
 		}
 }

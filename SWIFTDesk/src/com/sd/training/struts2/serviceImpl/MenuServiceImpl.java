@@ -30,11 +30,29 @@ public class MenuServiceImpl implements MenuService {
 		 MenuDao menuDao = new MenuDaoImpl();
 		  return menuDao.getMenuList();
 	}
+	public List<Menu> getMenuList(List menuIdList) {
+		 MenuDao menuDao = new MenuDaoImpl();
+		 
+		  return menuDao.getMenuList();
+	}
 
 	@Override
 	public List<Role> getRoleList() {
 		 MenuDao menuDao = new MenuDaoImpl();
 		  return menuDao.getRoleList();
+	}
+
+	@Override
+	public List<Menu> getMenuIdList(long id) {
+		MenuDao menuDao = new MenuDaoImpl();
+		  return menuDao.getMenuIdList(id);
+	}
+
+	@Override
+	public List<Menu> getCurrentMenu(long id) {
+		MenuDao menuDao = new MenuDaoImpl();
+		return menuDao.getMenuIdList(id);
+		//List list=
 	}
 
 		

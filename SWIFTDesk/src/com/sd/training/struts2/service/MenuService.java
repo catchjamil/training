@@ -10,5 +10,8 @@ public interface MenuService {
 	public List<Menu> menuList(User user)throws RuntimeException;
 	public Menu save(Menu menu)throws RuntimeException;
 	public List<Menu> getMenuList();
+	public List<Menu> getMenuList(List menuIdList);
+	public List<Menu> getMenuIdList(long id);
 	public List<Role> getRoleList();
+	public List<Menu> getCurrentMenu(long id);
 }

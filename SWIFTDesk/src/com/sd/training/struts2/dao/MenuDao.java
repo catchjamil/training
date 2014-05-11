@@ -13,4 +13,8 @@ public interface MenuDao {
 	public Menu save(Menu menu)throws RuntimeException;
 	public List<Menu> getMenuList();
 	public List<Role> getRoleList();
+	public List<Menu> getMenuIdList(long id);
+	//public List<Menu> getMenuList(List menuIdList) ;
+	public List<Menu> getMenuList(long id);
+
 }

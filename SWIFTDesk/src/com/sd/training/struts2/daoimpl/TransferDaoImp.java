@@ -48,7 +48,7 @@ public class TransferDaoImp implements TransferDao{
 	@Override
 	public List<User> getAcoountList(String username) {
 		Session session=HibernateUtil.openSession();
-		Query createQuery = session.createQuery("from User");
+		Query createQuery = session.createQuery("from User where uname="+username);
 		List<User> arrayList = new ArrayList<User>();
 		List<?> list = createQuery.list();	
 		for(Object obj:list){

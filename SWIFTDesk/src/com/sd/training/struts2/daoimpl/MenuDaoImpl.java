@@ -69,4 +69,19 @@ public class MenuDaoImpl implements MenuDao {
 		return list;
 	}
 
+	@Override
+	public List<Menu> getMenuIdList(long id) {
+		Session session = HibernateUtil.openSession();
+		Query createQuery = session.createQuery("from Role_Menu where Role_Id="+id);
+		List<Menu> list = (List<Menu>)createQuery.list();
+		return list;
+	}
+	@Override
+	public List<Menu> getMenuList(long id) {
+		Session session = HibernateUtil.openSession();
+		Query createQuery = session.createQuery("from Menu where Id="+id);
+		List<Menu> list = (List<Menu>)createQuery.list();
+		return list;
+	}
+
 }
