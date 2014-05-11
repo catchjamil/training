@@ -10,7 +10,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.sd.training.struts2.bean.Account;
-import com.sd.training.struts2.bean.Account_number;
 import com.sd.training.struts2.bean.Role;
 import com.sd.training.struts2.dao.AccountDao;
 import com.sd.training.struts2.util.DatabaseUtil;
