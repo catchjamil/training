@@ -1,0 +1,31 @@
+Color Encryption: As an illustration let us assume that the data
+has to be sent to a receiver (say A) who is assigned the color
+raspberry (135, 38, 87). Let the key values to be added with
+this color value be (-10, +5, +5). Let the Armstrong number
+used for data encryption be 153.
+Step 1: (Creating password)
+Initially the sender knows the required receiver to be A.
+So the key values are added with the color values assigned
+for receiver A.
+135 38 87
+-10 5 5
+-------------------------
+125 43 92
+Now a newly encrypted color is designed for security check.
+
+(Authenticating the receiver)
+For the receiver A (as assumed) the actual color being
+assigned is Raspberry. (135, 38, 87), the key values (set of
+three values) are subtracted from the color being received to
+get back the original color.
+The decryption is as follows.
+
+125 43 92 (Received data)
+(-) -10 5 5 (Key values)
+----------------------------------
+135 38 87
+The above set of values (135, 38, 87) is compared with the
+data stored at the sender’s side.
+
+
+
